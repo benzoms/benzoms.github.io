@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </header>
+
+    <body>
+        <!-- Menu Bar -->
+        <div id="menubar">
+            <text id="prevwall" onclick="prevWallpaper()"><</text>
+            
+            <button class="plusminusbutton" onclick="toggleMenu()">•</button>
+            <button class="plusminusbutton" onclick="toggleCheckInput()">U</button>
+            <button class="plusminusbutton" onclick="toggleTodo()">T</button>
+            <button class="plusminusbutton" onclick="toggleCheck()">C</button>
+            <button class="plusminusbutton" onclick="togglePomodoro()">P</button>
+            <button class="plusminusbutton" onclick="setRandWallpaper()"><text id="name">1</text></button>
+
+            <text id="nextwall" onclick="nextWallpaper()">></text>
+        </div>
+        <!-- <div id="menubar">
+            <text id="prevwall" onclick="prevWallpaper()"><</text>
+            <text id="menutoggle" onclick="toggleMenu()">+</text>
+            <text id="showupcoming" onclick="toggleUpcoming()">U:1</text>
+            <text id="showtodo" onclick="toggleTodo()">T:1</text>
+            <text id="showcheck" onclick="toggleCheck()">C:1</text>
+            <text id="showpom" onclick="togglePomodoro()">P:1</text>
+            <button class="plusminusbutton" onclick="setRandWallpaper()">🔀</button>
+            <text id="nextwall" onclick="nextWallpaper()">></text>
+        </div> -->
+        
+        <!-- Clock -->
+        <div id="mydiv" class="dragdiv">
+            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+            <div id="mydivheader" class="dragdivheader">
+                <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+            </div> 
+        </div>
+        
+        <!-- Todo List -->
+        <div id="mydiv2" class="dragdiv">
+            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+            <div id="mydiv2header" class="dragdivheader">     
+                <!-- <div class="todolist" id="todosettings"><ul id="myUL"></ul></div>   -->
+                
+                  <!-- <input type="text" id="myInput" placeholder="..." onkeydown="search(this)"/>      -->
+                <div class="todolist" id="todosettings">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5Uv5Iszh70PKfZrlI3y4u9?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <!-- <p id="pr1">Today:</p>
+                    <p> NLP Paper @ [Tuesday 12/13 2:00pm]</p>
+                    <p> &nbsp;|&nbsp;1 Approach</p>
+                    <p> &nbsp; &nbsp;|&nbsp;  a. YouTube transcript API</p>
+                    <br></br>
+                    <p> BAHW10 @ [Sunday 12/11 11:00pm]</p>
+                    <p> &nbsp;|&nbsp;1 Traveling Salesman Problem</p>
+                    <p> &nbsp; &nbsp;|&nbsp;  a. geeks2geeks</p>
+                    <p> &nbsp;|&nbsp;2 Max Flow</p>
+                    <p> &nbsp; &nbsp;|&nbsp;  a. Lecture 25</p>
+                    <p> &nbsp; &nbsp;|&nbsp;  b. Exercuse 24-1</p> -->
+                    
+                </div>
+            </div> 
+        </div>
+        <!-- Settings -->
+        <div id="mydiv3" class="dragdiv">
+            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+            <div id="mydiv3header" class="dragdivheader">
+                <div class="buttonsmenu" id="menu">
+                    <div id="bm1">
+                        <text><u>Clock: </u></text> <br></br>
+                        <text>Clock BG Opacity: </text>
+                        <button class="plusminusbutton" onclick="incrementClockOpac()">+</button>
+                        <button class="plusminusbutton" onclick="decrementClockOpac()">-</button>
+                        <br></br>
+                        <text>Toggle Clock Border: </text><button class="plusminusbutton" onclick="toggleClockBorder()">ø</button>
+                        <br></br><br></br>
+
+                        <text><u>ToDo: </u></text> <br></br>
+                        <text>ToDo BG Opacity: </text>
+                        <button class="plusminusbutton" onclick="incrementTodoOpac()">+</button>
+                        <button class="plusminusbutton" onclick="decrementTodoOpac()">-</button>
+                        <br></br>
+                        <text>Toggle ToDo Border: </text><button class="plusminusbutton" onclick="toggleTodoBorder()">ø</button>
+                        <br></br><br></br>
+                    
+                        <text><u>Input: </u></text> <br></br>
+                        <text>Upcoming BG Opacity: </text>
+                        <button class="plusminusbutton" onclick="incrementCheckInputOpac()">+</button>
+                        <button class="plusminusbutton" onclick="decrementCheckInputOpac()">-</button>
+                        <br></br>
+                        <text>Toggle Check Input Border: </text><button class="plusminusbutton" onclick="toggleCheckInputBorder()">ø</button>
+                        <br></br><br></br>
+
+                        <text><u>Checklist: </u></text> <br></br>
+                        <text >Toggle Check Border: </text><button onclick="toggleCheckBorder()" class="plusminusbutton">ø</button>
+                        <br></br><br></br>
+                        <!-- <text id="bgswap" onclick="nextWallpaper()"><text id="name">1</text>></text> -->
+                    </div>
+
+                    <div id="bm2">
+                        <!-- <input type="text" class="alphanumericinput" id="myInput" placeholder="..." onkeydown="search(this)" />
+                        <br></br><br></br> -->
+                        <text><u>Menu: </u></text> <br></br>
+                        <text>Menu BG Opacity: </text>
+                        <button class="plusminusbutton" onclick="incrementMenuOpac()">+</button>
+                        <button class="plusminusbutton" onclick="decrementMenuOpac()">-</button>
+                        <br></br>
+                        <text>Toggle Menu Border: </text><button class="plusminusbutton" onclick="toggleMenuBorder()">ø</button>
+                        <br></br><br></br>
+                        <text>Gif #:  </text><input class="alphanumericinput" type="number" id="wp_input" placeholder="e.x. 31" onkeydown="setwp(this)"/>  
+                        <br></br><br></br>
+                        <text>Font Color:</text>
+                        <input type="color" id="color-input" value="#c5cbab"/>
+                        <br></br><br></br>
+                        <text>Clock Style:</text>
+                        <button class="plusminusbutton" onclick="set_clock_style(0)">0</button>
+                        <button class="plusminusbutton" onclick="set_clock_style(1)">1</button>
+                        <button class="plusminusbutton" onclick="set_clock_style(2)">2</button>
+                        <br></br><br></br>
+                        <text class="textbutton" onclick="readTextFile()">∆</text>
+                    </div>
+                    
+                    
+                    <!-- <div id="color-picker">
+                        <input type="color" id="color-input" />
+                    </div>
+
+                    <button id="toggle-btn" onclick="togglePicker()">Show/Hide</button> -->
+                </div>
+            </div> 
+        </div>
+        
+        
+        <!-- Upcoming -->
+        <div id="mydiv4" class="dragdiv">
+            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+            <div id="mydiv4header" class="dragdivheader"> 
+                
+                
+                
+                <!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vTHcIZR72LKcamuY4pNOUJlCrGgT8itKn_QonrWyjzC4MWxeI7p6gwpfFNXKBITI_gnJySSOeWio4gp/pub?embedded=true"></iframe> -->
+                
+                <!-- <div class="upcoming" id="upcomingsettings">
+                    <br></br><p id="pr1">NLP:</p><br></br>
+                    <p> - NLP Paper</p><br></br>
+                    <p id="pr1">Econ:</p><br></br>
+                    <p> - Econ Final @ 12/13-9:30am</p><br></br>
+                    <p id="pr1">DS4E:</p><br></br>
+                    <p> - DS4E Final @ 12/13-3:30pm</p><br></br>
+                    <p id="pr1">Basic Algo:</p><br></br>
+                    <p> - BAHW10 @ 12/11-11:00pm</p><br></br>
+                    <p> - Basic Algo Final @ 12/16-12:30pm</p><br></br><br></br>
+                </div> -->
+            </div> 
+            <div class="checkinput">
+                <input type="text" class="alphanumericinput" id="myInput" placeholder="..." onkeydown="search(this)" />           
+                <br></br>
+            </div>
+        </div>
+
+        <!-- Pomodoro -->
+        <div id="mydiv5" class="dragdiv">
+            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+            <div id="mydiv5header" class="dragdivheader">            
+                <div class="container">
+                    <div class="outerRing">
+                        <div class="timer">
+                            <div id="time">
+                                <span id="minutes">25</span>
+                                <span id="colon">:</span>
+                                <span id="seconds">00</span>
+                            </div>
+                            <div id="stsp" class="pomo_control_buttons">START</div>
+                            <div id="pomo_studybreak_btn" class="pomo_control_buttons" onclick="studyBreak()">
+                                <a href="studybreak.html" target="_blank" rel="noopener noreferrer">
+                                    Study Break
+                                </a>
+                            </div>
+                            <span id="setting"><i class="fas fa-cog"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div id="mydiv6" class="dragdiv">
+            <div id="mydiv6header" class="dragdivheader">
+
+                  
+                  <ul id="myUL">
+                    <li class="checked"><text class="checlistitemtext">Exist for another day</text></li>
+                    <li><text class="checlistitemtext">Coffee</text></li>
+                    <li><text class="checlistitemtext">Shower</text></li>
+                  </ul>
+                  <!-- <input type="text" id="myInput" placeholder="..." onkeydown="search(this)"/> -->
+            </div>
+        </div>
+        
+
+        <script src="script.js"></script>
+    </body>
+</html>
