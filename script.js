@@ -15,20 +15,29 @@ var upcomingborder = true;
 var checkborder = true;
 var checkinputborder = true;
 var menuborder = true;
+var menubarborder = true;
 
 var curr_clock_style = 0;
+
+var color_font = "";
+var color_border = "";
 
 var mysetminutes = "25",
     mysetseconds = "00";
 
 function getRandInt(max) {
     out = Math.floor(Math.random() * max);
-    if(out == 1){
+    if(out == 1 || out == 0){
         out = getRandInt(max);
     }
     return out;
 }
-
+function getCSSVars() {
+    var r = document.querySelector(':root');
+    var rs = getComputedStyle(r);
+    color_font = rs.getPropertyValue('--clr-font');
+    color_border = rs.getPropertyValue('--clr-border');
+}
 
 function setPomodoro(){
     document.querySelector("#minutes").innerHTML = mysetminutes,
@@ -238,6 +247,7 @@ function toggleCheckBorder() {
         checkborder = false;
     } else {
         document.getElementById("mydiv6").style.border = "dashed";
+        document.getElementById("mydiv6").style.borderColor = color_border;
         checkborder = true;
     }
 }
@@ -252,13 +262,24 @@ function toggleMenuBorder() {
     }
 }
 
+function toggleMenuBarBorder() {
+    if (menubarborder) {
+        document.getElementById("menubar").style.border = "0";
+        menubarborder = false;
+    } else {
+        document.getElementById("menubar").style.border = "dashed";
+        menubarborder = true;
+    }
+}
+
 function toggleCheckInputBorder() {
-    if (checkborder) {
+    if (checkinputborder) {
         document.getElementById("mydiv4header").style.border = "0";
-        checkborder = false;
+        checkinputborder = false;
     } else {
         document.getElementById("mydiv4header").style.border = "dashed";
-        checkborder = true;
+        document.getElementById("mydiv4header").style.borderColor = color_border;
+        checkinputborder = true;
     }
 }
 
@@ -669,7 +690,7 @@ list.addEventListener('click', function(ev) {
 }, false);
 function playclearitem() {
     var audio = new Audio('sounds/clearitem.mp3');	
-    audio.volume = 0.1;	
+    audio.volume = 0.03;	
     audio.play();
 }
 // Create a new list item when clicking on the "Add" button
@@ -732,7 +753,10 @@ toggleCheck();
 togglePomodoro();
 toggleClockBorder();
 setRandWallpaper();
-
+toggleCheckBorder();
+toggleCheckInputBorder();
+toggleMenuBorder();
+//toggleMenuBarBorder();
 
 // JavaScript for the color picker
 const toggleBtn = document.getElementById('toggle-btn');
