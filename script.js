@@ -25,6 +25,10 @@ var color_border = "";
 var mysetminutes = "25",
     mysetseconds = "00";
 
+
+
+
+    
 function getRandInt(max) {
     out = Math.floor(Math.random() * max);
     if(out == 1 || out == 0){
