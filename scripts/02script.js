@@ -61,7 +61,7 @@ function setRandWallpaper() {
     
     r.style.setProperty('--curr_wall_num', newwp);
     document.getElementById('name').innerHTML = newwp;
-    var nexturl = "url(\'Gifs/" + newwp + ".gif\')";
+    var nexturl = "url(\'../Gifs/" + newwp + ".gif\')";
     document.body.style.backgroundImage = nexturl;
 }
 
@@ -77,7 +77,7 @@ function nextWallpaper() {
     }
     r.style.setProperty('--curr_wall_num', curr);
     document.getElementById('name').innerHTML = curr;
-    var nexturl = "url(\'Gifs/" + curr + ".gif\')";
+    var nexturl = "url(\'../Gifs/" + curr + ".gif\')";
     document.body.style.backgroundImage = nexturl;
 }
 
@@ -93,7 +93,7 @@ function prevWallpaper() {
     }
     r.style.setProperty('--curr_wall_num', curr);
     document.getElementById('name').innerHTML = curr;
-    var nexturl = "url(\'Gifs/" + curr + ".gif\')";
+    var nexturl = "url(\'../Gifs/" + curr + ".gif\')";
     document.body.style.backgroundImage = nexturl;
 }
 
@@ -108,7 +108,7 @@ function setWallpaper() {
 
     r.style.setProperty('--curr_wall_num', curr);
     document.getElementById('name').innerHTML = curr;
-    var nexturl = "url(\'Gifs/" + curr + ".gif\')";
+    var nexturl = "url(\'../Gifs/" + curr + ".gif\')";
     document.body.style.backgroundImage = nexturl;
 }
 
@@ -566,7 +566,7 @@ function progressTrack() {
         startStop.innerHTML = "START";
         progress = null;
         progressStart = 0;
-        var audio = new Audio('sounds/interact.mp3');
+        var audio = new Audio('../sounds/interact.mp3');
         audio.play();
         toggleStudyBreakBtn();
     }
@@ -687,13 +687,13 @@ var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
-    var audio = new Audio('sounds/checkitem.mp3');		
+    var audio = new Audio('../sounds/checkitem.mp3');		
     audio.volume = 0.025;		
     audio.play();
   }
 }, false);
 function playclearitem() {
-    var audio = new Audio('sounds/clearitem.mp3');	
+    var audio = new Audio('../sounds/clearitem.mp3');	
     audio.volume = 0.03;	
     audio.play();
 }
@@ -716,7 +716,7 @@ function newElement() {
   span.appendChild(txt);
   li.appendChild(span);
 
-  var audio = new Audio('sounds/newitem.mp3');	
+  var audio = new Audio('../sounds/newitem.mp3');	
   audio.volume = 1;	
   audio.play();
 

@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;600&family=Gloria+Hallelujah&family=Nanum+Pen+Script&family=Play&family=Press+Start+2P&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Silkscreen:wght@400;700&family=Space+Mono:wght@400;700&family=VT323&display=swap');
+:root {
+  --font-fam-default: "VT323", monospace;
+  --font-fam-clock: "VT323", monospace;
+  --font-fam-menubar: "Silkscreen", cursive;
+  --font-fam-menu: "Space Mono", monospace;
+  --font-fam-checklist: "Quantico", sans-serif;
+  --font-fam-pomodoro: "Gloria Hallelujah", cursive;
+}

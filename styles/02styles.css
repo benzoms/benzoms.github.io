@@ -11,7 +11,7 @@
 :root{
   --curr_wall_num: 1;
   --max_gif_num: 84;
-  --texturl: "Gifs/1.gif"
+  --texturl: "../Gifs/1.gif"
   --url: url();
   --todoborderopacity: 0.0;
   --clockborderopacity: 0.0;
@@ -50,7 +50,7 @@ html {
 }
 body{
     /* background-image: var(--url); */
-    background-image: url("Gifs/1.gif");
+    background-image: url("../Gifs/1.gif");
     background-size: cover;
     height: 100vh;
     padding:0;
