@@ -1,5 +1,5 @@
 
-
+var sideBarShown = true;
 var menuShown = true;
 var todoShown = true;
 var upcomingShown = true;
@@ -26,8 +26,60 @@ var mysetminutes = "25",
     mysetseconds = "00";
 
 
+var shelf1Out = false;
+var shelf2Out = false;
+var shelf3Out = false;
+var shelf4Out = false;
+document.getElementById('shelf1').onclick = function() {
+    if (shelf1Out) {
+        this.style.left = parseFloat(getComputedStyle(this).left) - 600 +'px';
+        shelf1Out = !shelf1Out;
+    }else {   
+        this.style.left = parseFloat(getComputedStyle(this).left) + 600 +'px';
+        shelf1Out = !shelf1Out;
+    }
+};
+document.getElementById('shelf2').onclick = function() {
+    if (shelf2Out) {
+        this.style.left = parseFloat(getComputedStyle(this).left) - 300 +'px';
+        shelf2Out = !shelf2Out;
+    }else {       
+        this.style.left = parseFloat(getComputedStyle(this).left) + 300 +'px';
+        shelf2Out = !shelf2Out;
+    }
+  };
 
+  document.getElementById('shelf3').onclick = function() {
+    if (shelf3Out) {
+        this.style.left = parseFloat(getComputedStyle(this).left) - 450 +'px';
+        shelf3Out = !shelf3Out;
+    }else {       
+        this.style.left = parseFloat(getComputedStyle(this).left) + 450 +'px';
+        shelf3Out = !shelf3Out;
+    }
+  };
 
+  document.getElementById('shelf4').onclick = function() {
+    if (shelf4Out) {
+        this.style.left = parseFloat(getComputedStyle(this).left) - 300 +'px';
+        shelf4Out = !shelf4Out;
+    }else {       
+        this.style.left = parseFloat(getComputedStyle(this).left) + 300 +'px';
+        shelf4Out = !shelf4Out;
+    }
+  };
+
+function toggleSidebar() {
+    if (sideBarShown) {
+        document.getElementById("sidebar").style.zIndex = "-1";
+        document.getElementById("sidebar").style.opacity = "0";
+    } else {
+        document.getElementById("sidebar").style.zIndex = "15";
+        document.getElementById("sidebar").style.opacity = "1.0";
+    }
+    sideBarShown = !sideBarShown;
+}
+toggleSidebar();
     
 function getRandInt(max) {
     out = Math.floor(Math.random() * max);
@@ -731,8 +783,11 @@ function newElement() {
 
 function search(ele) {
     if(event.key === 'Enter') {
-        // alert(ele.value);
-        newElement();        
+        if(ele.value == "!dinotime"){
+            dinotime();
+        }else {
+            newElement();  
+        }
     }
 }
 
@@ -776,6 +831,25 @@ function togglePicker() {
     colorPicker.style.display = 'none';
   }
 }
+function dinotime() {
+    document.getElementById('sidebarbutton').style.display = 'inline';
+    document.getElementById('calendarbutton').style.display = 'inline';
+    document.getElementById("myInput").value = "";
+}
+function showSidebarButton() {
+    document.getElementById('sidebarbutton').style.display = 'inline';
+    document.getElementById("myInput").value = "";
+}
+
+function toggleSidebarButton() {
+    // Show or hide the color picker
+    const sideb = document.getElementById('color-picker');
+    if (colorPicker.style.display === 'none') {
+      colorPicker.style.display = 'block';
+    } else {
+      colorPicker.style.display = 'none';
+    }
+  }
 
 colorInput.addEventListener('input', () => {
   // Update the text color when the color picker value changes

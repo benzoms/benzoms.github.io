@@ -572,3 +572,100 @@ ul li#keyTodoItem.checked {
 #myInput {
   transform: translate(5%, -150%);
 }
+
+
+.shelf {
+  border-style: double;
+  /* border-color: var(--clr-border); */
+  border-color: rgba(115, 61, 38, 1);
+  background-color: rgba(204, 148, 139, 0.4);
+  border-radius: 5px;
+
+  top:3%;
+  position:fixed;
+  left: -78%;
+  height:15vh;
+  width: 80vw;
+  z-index: 99;
+  transition: 0.2s;
+}
+#shelf2 {
+  top: 20%;
+}
+#shelf3 {
+  top: 37%;
+}
+#shelf4 {
+  top: 54%;
+}
+.booktitle {
+  position: fixed;
+  z-index: 105;
+  bottom: 83%;
+  margin-left: 2rem;
+}
+.booktitle2 {
+  position: fixed;
+  z-index: 105;
+  bottom: 66%;
+  margin-left: 2rem;
+}
+.booktitle3 {
+  position: fixed;
+  z-index: 105;
+  bottom: 49%;
+  margin-left: 2rem;
+}
+.booktitle4 {
+  position: fixed;
+  z-index: 105;
+  bottom: 32%;
+  margin-left: 2rem;
+}
+ .book {
+  top: 0;
+  position: absolute;
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+.book .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.book:hover .img-top {
+  display: inline;
+}
+#book1 {
+  left: 90%;
+}
+#book2 {
+  left: 80%;
+}
+#book3 {
+  left: 70%;
+}
+#book4 {
+  left: 60%;
+}
+
+.book .img-btm {
+  display: inline;
+  
+}
+.book:hover .img-btm {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+#sidebarbutton {
+  display: none;
+}
+#calendarbutton {
+  display: none;
+}

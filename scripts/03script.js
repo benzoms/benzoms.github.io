@@ -15,7 +15,40 @@ var clock_width = "60rem";
 
 // audioFiles[1].volume = 1;	
 // audioFiles[2].volume = 0.3;		
+var shelf1Out = false;
+var shelf2Out = false;
+document.getElementById('shelf1').onclick = function() {
+    if (shelf1Out) {
+        this.style.left = parseFloat(getComputedStyle(this).left) - 900 +'px';
+        shelf1Out = !shelf1Out;
+    }else {
+        
+        this.style.left = parseFloat(getComputedStyle(this).left) + 900 +'px';
+        shelf1Out = !shelf1Out;
+    }
+    
+  };
 
+  document.getElementById('shelf2').onclick = function() {
+    if (shelf2Out) {
+        this.style.left = parseFloat(getComputedStyle(this).left) - 900 +'px';
+        shelf2Out = !shelf2Out;
+    }else {       
+        this.style.left = parseFloat(getComputedStyle(this).left) + 900 +'px';
+        shelf2Out = !shelf2Out;
+    }
+  };
+
+// function slideShelf(){
+//     console.log('hey')
+//     document.getElementById("shelf1").classList.toggle('slideOut');
+// }
+// $(function(){
+// 	$('.shelf').click(function(e){
+//     $('shelf1').toggleClass('slideOut');
+//     //$('.op').toggleClass('po');
+// 	});
+// });
 
 
 
