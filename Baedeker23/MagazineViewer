@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+.magazine-viewer{
+	width: 100%;
+}
+.nav-btn{
+	color: #6c81a3;
+    background-color: #c1dae3;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav-btn:hover {
+	background-color: #6c81a3;
+    color: #c1dae3;
+    border-style: none;
+}
+
+.nav-btn-right {
+	float:right;`
+    
+}
+</style>
+<body>
+<div class="magazine-viewer">
+  <img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/1.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/2.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/3.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/4.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/5.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/6.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/7.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/8.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/9.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/10.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/11.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/12.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/13.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/14.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/15.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/16.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/17.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/18.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/19.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/20.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/21.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/22.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/23.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/24.png" style="width:100%">
+<img class="mySlides" src="https://benzoms.github.io/Baedeker23/fall23_nyc/25.png" style="width:100%">
+
+    <div class="mag-nav">
+  <button class="nav-btn" style="float:left;" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="nav-btn" style="float:right;" onclick="plusDivs(1)">&#10095;</button>
+  <p class="magtitle" style="text-align:center;">Fall '23 NYC</p>
+  
+  </div>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+</body>
+</html>
+
+
+
