@@ -1,0 +1,13 @@
+#word {
+    margin-bottom: 0;
+}
+
+.phoneticPara {
+    display: inline-block;
+    margin-top: 0;
+    
+}
+
+.meaningContainer{
+    border-style: solid;
+}
