@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-image: url("../Gifs/chickenswaiting.gif");
+    background-size: cover;
+}
+p {
+    text-align: center;
+    font-size: 80px;
+    margin-top: 45vh;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 2vh;
+    font-family: "Bebas Neue", sans-serif;
+}
+
