@@ -115,8 +115,10 @@ body {
 }
 
 .general-container {
+
     /* border-style:solid; */
     position: absolute;
+    padding-left: 35px;
     z-index:30;
     bottom: 0;
     left: 50vw;
