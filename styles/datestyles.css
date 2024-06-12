@@ -1,22 +1,226 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Danfo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
 body {
     background-image: url("../Gifs/chickenswaiting.gif");
-    background-size: cover;
+    background-size:auto 150vh;
+    background-position: center;
+    background-repeat: repeat;
+    
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-p {
-    text-align: center;
-    font-size: 80px;
-    margin-top: 45vh;
+
+
+
+.progress {
+    width: 60%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top:45vh;
+
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
+}
+
+.progress-bar {
+    height: 30px;
+    width: 0;
+    background-color: #76c7c0;
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    color: black;
+    transition: width 0.4s ease;
+}
+
+#title {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    font-size: 80px;
+    margin-top: 35vh;
+    font-family: "Danfo", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "ELSH" 0;
+    color: black;
+    
   }
+
+/* .egg {
+    position: absolute;
+    
+    bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    left: 50vw;
+    z-index: 30;
+    
+}
+.egg img {
+    height: 150px;
+    width: auto;
+} */
+/*https://codepen.io/sandrapinazo/pen/XWXwbPb*/
+.eggmsg {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+    z-index: 31;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: #faf3c0;
+    border-style: dashed;
+    width: 120%;
+    height:auto;
+    transform: translate(-40%, -50%);
+    padding-bottom: 0;
+    font-size: 30px;
+    /* line-height: 20px; */
+    text-align: center;
+    text-wrap:wrap;
+
+    
+    opacity: 0;
+    transition: opacity 0.5s;
+    
+}
+
+.show {
+    
+    opacity: 1;
+}
+
+.eggmsg text{
+    
+    text-wrap: wrap;
+    height: auto;
+    margin: 8px;
+    margin-bottom: 0;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    
+    color: sandybrown;
+    overflow-wrap: break-word;
+    
+    /* border-style:solid; */
+}
+
+.general-container {
+    /* border-style:solid; */
+    position: absolute;
+    z-index:30;
+    bottom: 0;
+    left: 40vw;
+    transform: translate(-50%, -50%);
+  }
+  #egg2 {
+    
+    bottom: 50px;
+    left: 60vw;
+    transform: translate(-50%, -50%);
+  }
+  .shadow {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    animation: boingShadow 2s ease-in-out infinite alternate;
+  }
+  
+  .egg {
+    cursor: pointer;
+    margin: 20px;
+    margin-bottom:5px;
+    width: 100px;
+    height: 125px;
+    background-color: #faf3c0;
+    border: 1px solid #000;
+    border-top-left-radius: 50% 60%;
+    border-top-right-radius: 50% 60%;
+    border-bottom-left-radius: 50% 40%;
+    border-bottom-right-radius: 50% 40%;
+    transform-origin: center bottom;
+    animation: boing 2s ease-in-out infinite alternate;
+    box-shadow: inset -5px -10px rgba(168, 164, 176, 0.5);
+  }
+  
+  .spots {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    height: 15px;
+    width: 10px;
+    background-color: #a8a4b0;
+    border-top-left-radius: 60% 60%;
+    border-top-right-radius: 40% 40%;
+    border-bottom-left-radius: 40% 40%;
+    border-bottom-right-radius: 60% 60%;
+  }
+  .spots:before {
+    position: absolute;
+    left: -10px;
+    top: 16px;
+    content: "";
+    display: block;
+    height: 13px;
+    width: 7px;
+    background-color: #a8a4b0;
+    border-top-left-radius: 60% 60%;
+    border-top-right-radius: 40% 40%;
+    border-bottom-left-radius: 40% 40%;
+    border-bottom-right-radius: 60% 60%;
+  }
+  .spots:after {
+    position: absolute;
+    left: 0px;
+    top: 25px;
+    content: "";
+    display: block;
+    height: 10px;
+    width: 5px;
+    background-color: #a8a4b0;
+    border-top-left-radius: 60% 60%;
+    border-top-right-radius: 40% 40%;
+    border-bottom-left-radius: 40% 40%;
+    border-bottom-right-radius: 60% 60%;
+  }
+  
+  @keyframes boing {
+    from {
+      transform: scale(1, 1) translateY(-20px);
+    }
+    to {
+      transform: scale(1.2, 0.8) translateY(0px);
+    }
+  }
+  @keyframes boingShadow {
+    from {
+      transform: scale(0.9, 1);
+    }
+    to {
+      transform: scale(1.2, 0.8);
+    }
+  }
+
+/* 
 
 h1 {
     text-align: center;
     font-size: 60px;
     margin-top: 2vh;
     font-family: "Bebas Neue", sans-serif;
-}
+    color: white;
+} */
 
