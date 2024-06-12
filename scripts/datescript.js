@@ -15,11 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const minutesTotal = Math.floor(distanceWhole / (1000 * 60));
     const progress = Math.floor(((minutesTotal - minutesLeft) / minutesTotal) * 100);
 
+    const decminutesLeft = (distanceLeft / (1000 * 60));
+    const decminutesTotal = (distanceWhole / (1000 * 60));
+    const decprogress = (((decminutesTotal - decminutesLeft) / decminutesTotal) * 100);
+
     // Update the progress bar
     const progressBar = document.getElementById('progressbar');
     progressBar.setAttribute('aria-valuenow', progress);
     progressBar.style.width = progress + "%";
-    progressBar.innerHTML = progress + "%";
+    // progressBar.innerHTML = progress + "%";
+    progressBar.innerHTML = decprogress + "%";
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,6 +39,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// function toggleMap(){
+//     const div = document.querySelector('#mapicondiv');
+//     const map = document.querySelector('#map');
+//     div.addEventListener('click', () => {
+//         if (map.classList.contains('show')) {
+//             map.classList.remove('show');
+            
+//         } else {
+//             map.classList.add('show');
+//         }
+//     });
+// }
+document.addEventListener('DOMContentLoaded', () => {
+    const div = document.querySelector('#mapicondiv');
+    const map = document.querySelector('#map');
+    div.addEventListener('click', () => {
+        if (map.classList.contains('show')) {
+            map.classList.remove('show');
+        } else {
+            map.classList.add('show');
+        }
+    });
+});
+// document.addEventListener('DOMContentLoaded', () => {
+//     const div = document.querySelector('#mapicondiv');
+//     const icon = document.querySelector('#mapicon');
+//     const close = document.querySelector('#closemapbtn');
+
+//     div.addEventListener('click', () => {
+//         if (close.classList.contains('show')) {
+//             close.classList.remove('show');
+//             icon.classList.remove('hide')
+            
+//         } else {
+//             close.classList.add('show');
+//             icon.classList.add('hide');
+//         }
+//     });
+// });
 
 // // countdown.js
 
