@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Danfo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
 body {
     background-image: url("../Gifs/chickenswaiting.gif");
     background-size:auto 150vh;
@@ -13,6 +14,43 @@ body {
     align-items: center;
 }
 
+.banner {
+    position: absolute;
+    top:5px;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+        45deg,
+        yellow,
+        yellow 10px,
+        black 10px,
+        black 20px
+    );
+    display: flex;
+    align-items: center;
+}
+
+.scrolling-text {
+    background-color: yellow;
+    position: absolute;
+    white-space: nowrap;
+    font-size: 24px;
+    font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+    color: black;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 
 .progress {
@@ -59,7 +97,9 @@ body {
     font-style: normal;
     font-variation-settings:
       "ELSH" 0;
-    color: black;
+    background: linear-gradient(to bottom right, red, yellow);;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
     text-align: center;
 }
 .title {
@@ -74,7 +114,9 @@ body {
     font-style: normal;
     font-variation-settings:
       "ELSH" 0;
-    color: black;
+    background: linear-gradient(to bottom right, aqua, navy);;
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text; 
     
   }
 
