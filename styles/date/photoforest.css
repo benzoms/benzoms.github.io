@@ -1,0 +1,12 @@
+body {
+    background-image: url("../../Gifs/date/enchantedforest.gif");
+    background-size:cover;
+    background-position: auto;
+    background-repeat: no-repeat;
+    
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

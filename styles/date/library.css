@@ -1,0 +1,12 @@
+body {
+    background-image: url("../../Gifs/date/library.gif");
+    background-size:cover;
+    background-position: auto;
+    background-repeat: no-repeat;
+    
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

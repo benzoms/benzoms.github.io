@@ -55,14 +55,16 @@ body {
 
 .progress {
     width: 60%;
+    z-index: 5;
     background-color: #e0e0e0;
     border-radius: 25px;
     overflow: hidden;
-    margin-top:45vh;
+    margin-top:75vh;
 
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
+    transform: translateX(-50%);
     
 }
 
@@ -97,7 +99,7 @@ body {
     font-style: normal;
     font-variation-settings:
       "ELSH" 0;
-    background: linear-gradient(to bottom right, red, yellow);;
+    background: linear-gradient(to bottom right, red, yellow);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
     text-align: center;
@@ -107,14 +109,14 @@ body {
     z-index: 2;
     text-align: center;
     font-size: 80px;
-    margin-top: 35vh;
+    margin-top: 65vh;
     font-family: "Danfo", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
       "ELSH" 0;
-    background: linear-gradient(to bottom right, aqua, navy);;
+    background: linear-gradient(to bottom right, aqua, navy);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
     
@@ -278,6 +280,38 @@ body {
     }
   }
 
+
+.potd{
+  z-index: 26;
+  position: relative;
+  margin-top: 5%;
+  transform: translateX(50%);
+}
+
+#potdimg {
+  
+  position: relative;
+  
+  width: 30%;
+}
+
+#potd-title {
+  
+  margin:0;
+  
+  font-size: 80px;
+  font-family: "Danfo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "ELSH" 0;
+  background: linear-gradient(180deg, rgba(255,184,0,1) 35%, rgba(5,255,0,1) 100%);
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text; 
+  text-align: center;
+}
+
 #mapicondiv {
   position: absolute;
   z-index: 40;
@@ -312,7 +346,7 @@ body {
   position: absolute;
   
   width: 60%;
-  transform: translate(-5%, 25%);
+  transform: translate(-5%, 10%);
   
 }
 #map-img{
