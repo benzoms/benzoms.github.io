@@ -28,14 +28,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const egg = document.querySelector('.egg');
-    const eggMsg = document.querySelector('.eggmsg');
+    const egg1 = document.getElementById('egg1');
+    const eggMsg1 = document.getElementById('eggmsg1');
 
-    egg.addEventListener('click', () => {
-        if (eggMsg.classList.contains('show')) {
-            eggMsg.classList.remove('show');
+    egg1.addEventListener('click', () => {
+        if (eggMsg1.classList.contains('show')) {
+            eggMsg1.classList.remove('show');
         } else {
-            eggMsg.classList.add('show');
+            eggMsg1.classList.add('show');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const egg2 = document.getElementById('egg2');
+    const eggMsg2 = document.getElementById('eggmsg2');
+
+    egg2.addEventListener('click', () => {
+        if (eggMsg2.classList.contains('show')) {
+            eggMsg2.classList.remove('show');
+        } else {
+            eggMsg2.classList.add('show');
         }
     });
 });

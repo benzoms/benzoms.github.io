@@ -112,7 +112,7 @@ body {
     z-index: 2;
     text-align: center;
     font-size: 80px;
-    top: 45vh;
+    top: 50vh;
     font-family: "Danfo", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -193,9 +193,11 @@ body {
   }
   #egg2 {
     
-    bottom: 50px;
-    left: 60vw;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    padding-left: 15px;
+    z-index:29;
+    bottom: 3vh;
+    left: 25vw;
   }
   .shadow {
     position: absolute;
@@ -225,6 +227,13 @@ body {
     box-shadow: inset -5px -10px rgba(168, 164, 176, 0.5);
   }
   
+  #egg2spots {
+    background-color: #337d40;
+  }
+  #egg2spots, #egg2spots:after, #egg2spots:before {
+    background-color: #337d40;
+  }
+
   .spots {
     position: absolute;
     left: 30px;
