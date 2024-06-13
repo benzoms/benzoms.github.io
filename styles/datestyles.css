@@ -332,6 +332,7 @@ body {
   display: none;
 }
 #mapicondiv img{
+  cursor: pointer;
   height: 80px;
   width:auto;
   /* border-style: solid; */
@@ -352,7 +353,8 @@ body {
   position: absolute;
   
   width: 60%;
-  transform: translate(-5%, 55%);
+  top: 10vh;
+  /* transform: translate(-5%, 55%); */
   
 }
 #map-img{

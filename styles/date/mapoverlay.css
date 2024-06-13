@@ -9,6 +9,7 @@
   }
 
 #mapicondiv img{
+    cursor: pointer;
     height: 80px;
     width:auto;
     /* border-style: solid; */
@@ -26,10 +27,14 @@
     z-index: 25;
   }
   #map {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     width: 60%;
-    transform: translate(-5%, 0%);
+    transform: translate(-5%, 0%); */
+    position: absolute;
+  
+    width: 60%;
+    top: 10vh;
     
   }
   #map-img{

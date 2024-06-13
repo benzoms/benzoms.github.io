@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
 //     });
 // }
 const deployed = true;
-const root = '';
-if(deployed){
-    root = 'file:///Users/benzhang/Mine/Tech/Projects/backgrounds/'
+let root = '';
+if(!deployed){
+    root = 'file:///Users/benzhang/Mine/Tech/Projects/backgrounds/';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
