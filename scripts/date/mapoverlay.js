@@ -1,7 +1,9 @@
 const deployed = true;
-let root = '';
+let pathroot = '';
 if(!deployed){
-    root = 'file:///Users/benzhang/Mine/Tech/Projects/backgrounds/';
+    pathroot = 'file:///Users/benzhang/Mine/Tech/Projects/backgrounds/';
+}else {
+    pathroot = 'https://'
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const library = document.querySelector('#library');
     
     library.addEventListener('click', () => {
-        window.location.replace(root+"benzoms.github.io/pages/date/library.html");
+        window.location.replace(pathroot+"benzoms.github.io/pages/date/library.html");
         // if (map.classList.contains('show')) {
         //     map.classList.remove('show');
         // } else {
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const egggarden = document.querySelector('#egggarden');
     
     egggarden.addEventListener('click', () => {
-        window.location.replace(root+"benzoms.github.io/pages/date.html");
+        window.location.replace(pathroot+"benzoms.github.io/pages/date.html");
         // if (map.classList.contains('show')) {
         //     map.classList.remove('show');
         // } else {
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     photoforest.addEventListener('click', () => {
        
-        window.location.replace(root+"benzoms.github.io/pages/date/photoforest.html");
+        window.location.replace(pathroot+"benzoms.github.io/pages/date/photoforest.html");
         // if (map.classList.contains('show')) {
         //     map.classList.remove('show');
         // } else {
