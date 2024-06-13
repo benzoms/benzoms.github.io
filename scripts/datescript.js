@@ -56,8 +56,9 @@ let pathroot = '';
 if(!deployed){
     pathroot = 'file:///Users/benzhang/Mine/Tech/Projects/backgrounds/';
 }else {
-    pathroot = 'https://'
+    pathroot = 'https://';
 }
+console.log(pathroot+"benzoms.github.io/pages/date/library.html");
 
 document.addEventListener('DOMContentLoaded', () => {
     const div = document.querySelector('#mapicondiv');
