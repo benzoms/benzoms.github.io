@@ -56,15 +56,17 @@ body {
 .progress {
     width: 60%;
     z-index: 5;
+    position: absolute;
+    top: 60vh;
     background-color: #e0e0e0;
     border-radius: 25px;
     overflow: hidden;
-    margin-top:75vh;
+    /* margin-top:75vh; */
 
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
     
 }
 
@@ -109,7 +111,7 @@ body {
     z-index: 2;
     text-align: center;
     font-size: 80px;
-    margin-top: 65vh;
+    top: 45vh;
     font-family: "Danfo", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -184,7 +186,7 @@ body {
     position: absolute;
     padding-left: 35px;
     z-index:30;
-    bottom: 0;
+    bottom: -15%;
     left: 50vw;
     transform: translate(-50%, -50%);
   }
@@ -282,10 +284,13 @@ body {
 
 
 .potd{
+  text-align: center;
   z-index: 26;
-  position: relative;
-  margin-top: 5%;
-  transform: translateX(50%);
+  position: absolute;
+  top: 25vh;
+  /* margin-top: 5%; */
+  
+  /* transform: translateX(50%); */
 }
 
 #potdimg {
@@ -299,7 +304,7 @@ body {
   
   margin:0;
   
-  font-size: 80px;
+  font-size: 75px;
   font-family: "Danfo", serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -346,7 +351,7 @@ body {
   position: absolute;
   
   width: 60%;
-  transform: translate(-5%, 10%);
+  transform: translate(-5%, 5%);
   
 }
 #map-img{
