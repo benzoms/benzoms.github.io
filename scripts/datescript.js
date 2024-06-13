@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBar.setAttribute('aria-valuenow', progress);
     progressBar.style.width = progress + "%";
     // progressBar.innerHTML = progress + "%";
-    progressBar.innerHTML = decprogress + "%";
+    progressBar.innerHTML = decprogress.toString().substring(0, 6) + "%";
 });
 
 document.addEventListener('DOMContentLoaded', () => {
