@@ -1,7 +1,12 @@
 body {
     background-image: url("../../Gifs/date/library.gif");
-    background-size:cover;
+    /* background-size:cover;
     background-position: auto;
+    background-repeat: no-repeat; */
+    
+    background-size: auto 100vh;
+    background-position: top;
+    /* background-position: top 60vh; */
     background-repeat: no-repeat;
     
     /* text-align: center; */
