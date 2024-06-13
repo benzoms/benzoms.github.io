@@ -187,9 +187,9 @@ body {
     position: absolute;
     padding-left: 35px;
     z-index:30;
-    bottom: -15%;
+    bottom: 1vh;
     left: 50vw;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
   }
   #egg2 {
     

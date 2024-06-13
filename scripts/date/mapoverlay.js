@@ -1,3 +1,9 @@
+const deployed = true;
+const root = '';
+if(deployed){
+    root = 'file:///Users/benzhang/Mine/Tech/Projects/backgrounds/'
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const div = document.querySelector('#mapicondiv');
     const map = document.querySelector('#map');
@@ -14,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const library = document.querySelector('#library');
     
     library.addEventListener('click', () => {
-        window.location.replace("file:///Users/benzhang/Mine/Tech/Projects/backgrounds/benzoms.github.io/pages/date/library.html");
+        window.location.replace(root+"benzoms.github.io/pages/date/library.html");
         // if (map.classList.contains('show')) {
         //     map.classList.remove('show');
         // } else {
@@ -27,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const egggarden = document.querySelector('#egggarden');
     
     egggarden.addEventListener('click', () => {
-        window.location.replace("file:///Users/benzhang/Mine/Tech/Projects/backgrounds/benzoms.github.io/pages/date.html");
+        window.location.replace(root+"benzoms.github.io/pages/date.html");
         // if (map.classList.contains('show')) {
         //     map.classList.remove('show');
         // } else {
@@ -40,7 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoforest = document.querySelector('#photoforest');
     
     photoforest.addEventListener('click', () => {
-        window.location.replace("file:///Users/benzhang/Mine/Tech/Projects/backgrounds/benzoms.github.io/pages/date/photoforest.html");
+       
+        window.location.replace(root+"benzoms.github.io/pages/date/photoforest.html");
         // if (map.classList.contains('show')) {
         //     map.classList.remove('show');
         // } else {
