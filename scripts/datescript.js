@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const egg2 = document.getElementById('egg2');
+    const egg2 = document.getElementById('egg2hb');
     const eggMsg2 = document.getElementById('eggmsg2');
 
     egg2.addEventListener('click', () => {
@@ -49,6 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
             eggMsg2.classList.remove('show');
         } else {
             eggMsg2.classList.add('show');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const egg3 = document.getElementById('egg3hb');
+    const eggMsg3 = document.getElementById('eggmsg3');
+
+    egg3.addEventListener('click', () => {
+        if (eggMsg3.classList.contains('show')) {
+            eggMsg3.classList.remove('show');
+        } else {
+            eggMsg3.classList.add('show');
         }
     });
 });
