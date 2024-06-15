@@ -65,6 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const egg4 = document.getElementById('egg4hb');
+    const eggMsg4 = document.getElementById('eggmsg4');
+
+    egg4.addEventListener('click', () => {
+        if (eggMsg4.classList.contains('show')) {
+            eggMsg4.classList.remove('show');
+        } else {
+            eggMsg4.classList.add('show');
+        }
+    });
+});
 // function toggleMap(){
 //     const div = document.querySelector('#mapicondiv');
 //     const map = document.querySelector('#map');

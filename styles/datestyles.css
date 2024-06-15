@@ -197,7 +197,7 @@ body {
     /* border-style:solid; */
     position: absolute;
     padding-left: 35px;
-    z-index:30;
+    z-index:31;
     bottom: 1vh;
     left: 50vw;
     /* transform: translate(-50%, -50%); */
@@ -206,7 +206,7 @@ body {
     
     position: absolute;
     padding-left: 15px;
-    z-index:29;
+    z-index:28;
     bottom: 3vh;
     left: 25vw;
   }
@@ -215,9 +215,17 @@ body {
     
     position: absolute;
     padding-left: 15px;
-    z-index:31;
+    z-index:30;
     bottom: 6vh;
     left: 40vw;
+  }
+
+  #egg4 {
+    position: absolute;
+    padding-left: 15px;
+    z-index:29;
+    bottom: 2vh;
+    left: 36vw;
   }
 
   .shadow {
@@ -259,6 +267,12 @@ body {
   }
   #egg3spots, #egg3spots:after, #egg3spots:before {
     background-color: #8d58c9;
+  }
+  #egg4spots {
+    background-color: #a2ac0f;
+  }
+  #egg4spots, #egg4spots:after, #egg4spots:before {
+    background-color: #a2ac0f;
   }
 
   .spots {
