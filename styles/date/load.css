@@ -41,6 +41,10 @@ background: linear-gradient(90deg, rgba(218,94,27,1) 0%, rgba(255,252,0,1) 28%, 
 #progresstext{
     line-height: 30px;
     font-size: 20px;
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .progress-bar {
@@ -55,7 +59,8 @@ background: linear-gradient(90deg, rgba(218,94,27,1) 0%, rgba(255,252,0,1) 28%, 
     transition: width 0.4s ease;
     background-image: url("../../Gifs/date/dogsrunning.GIF");
     background-size: 40svw 4svh;
-    background-repeat: no-repeat;
+    background-repeat:repeat-x;
+    background-position: right 50% bottom 50%;
 }
 #dogsrunning {
     position: absolute;
