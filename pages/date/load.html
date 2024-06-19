@@ -16,7 +16,8 @@
             </div>
         </div>
         </div>
-        <div id="loadingmsg"><h1>Loading<span id="wait">.</span></h1></div>
+        <div id="loadingmsg"><h1 id="loadmsg">getting things ready<span id="wait">.</span></h1>
+        <h2 id="loadsubmsg">may take up to 50 seconds</h2></div>
         
         <!-- <img id="dogsrunning" src="../../Gifs/date/dogsrunning.GIF"> -->
         
@@ -30,7 +31,7 @@
         } else {
             wait.innerHTML += '.';
         }
-    }, 100);
+    }, 200);
 });
         document.addEventListener('DOMContentLoaded', () => {
     const url = 'https://fantasyland-mt6o.onrender.com/status';  // Replace with the actual URL http://localhost:3000/status
@@ -73,7 +74,7 @@
         }
     }
 
-    fetchAndCheckStatus();
+    //fetchAndCheckStatus();
 });
 document.addEventListener('DOMContentLoaded', () => {
 

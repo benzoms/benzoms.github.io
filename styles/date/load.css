@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 body {
-    background-image: url("../../Gifs/date/bilbohouse.gif");
+    /* background-image: url("../../Gifs/date/bilbohouse.gif"); */
         
-        background-size: 100svw 100svh;
-        background-position: top;
-        background-repeat: no-repeat;
+        
+        
         
         display: flex;
         justify-content: center;
         align-items: center;
+        background: rgb(2,0,36);
+background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+background-size: 100svw 100svh;
+        background-position: top;
+background-repeat: no-repeat;
         overflow: hidden;
+        
 }
 
 
@@ -34,7 +40,7 @@ background: linear-gradient(90deg, rgba(218,94,27,1) 0%, rgba(255,252,0,1) 28%, 
 }
 #progresstext{
     line-height: 30px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .progress-bar {
@@ -59,7 +65,81 @@ background: linear-gradient(90deg, rgba(218,94,27,1) 0%, rgba(255,252,0,1) 28%, 
 }
 #loadingmsg {
     position: absolute;
-    top: 3%;
-    width: 5svw;
+    top: 40%;
+    width: 100svw;
     left: 35svw;
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  color: hsl(230, 100%, 95%);
 }
+@keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+  }
+
+  #loadmsg {
+    margin: auto;
+    font-weight: 500;
+    animation: lights 5s 500ms linear infinite;
+    transform: translateX(-28%);
+
+  }
+  #loadsubmsg {
+    color: hsl(230, 40%, 80%);
+    position: absolute;
+    font-size: 18px;
+    font-weight: 400;
+    top: 3svh;
+    transform: translateX(-25%);
+    /* margin-top: 5px; 
+    font-size: 18px;
+    font-weight: 400;
+
+    transform: translateX(-25%); */
+
+  }
