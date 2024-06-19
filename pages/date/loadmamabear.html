@@ -7,17 +7,9 @@
     <link rel="stylesheet" href="../../styles/date/load.css">
 </head>
 <body>
-        <div style="text-align: center;">
-            <div class="progress">
-                <text id="progresstext" class="progress-text">0%</text>
-            <div id="progressbar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                aria-valuemax="100">
-                
-            </div>
-        </div>
-        </div>
+        
         <div id="loadingmsg"><h1 class="coloreffecttext" id="loadmsg">getting things ready<span id="wait">.</span></h1>
-        <h2 id="loadsubmsg">may take up to 50 seconds</h2></div>
+        <h2 class="coloreffecttext" id="loadsubmsg">may take up to 50 seconds</h2></div>
         
         <!-- <img id="dogsrunning" src="../../Gifs/date/dogsrunning.GIF"> -->
         
@@ -31,7 +23,7 @@
         } else {
             wait.innerHTML += '.';
         }
-    }, 200);
+    }, 500);
 });
         document.addEventListener('DOMContentLoaded', () => {
     const url = 'https://fantasyland-mt6o.onrender.com/status';  // Replace with the actual URL http://localhost:3000/status
@@ -56,7 +48,7 @@
                 console.log(response.status);
                 console.error('Response not OK:', response.status);
             }
-            window.location.replace("https://fantasyland-mt6o.onrender.com/");
+            window.location.replace("https://fantasyland-mt6o.onrender.com/mamabear");
             //document.body.style.backgroundColor = 'yellow';
             // Since we can't access the response data with 'no-cors', assume status 200 for demonstration
             // if (response.ok) {
