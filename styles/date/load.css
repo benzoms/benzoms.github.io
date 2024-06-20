@@ -70,7 +70,7 @@ background: linear-gradient(90deg, rgba(218,94,27,1) 0%, rgba(255,252,0,1) 28%, 
 }
 #loadingmsg {
     position: absolute;
-    top: 30%;
+    top: 40%;
     width: 100svw;
     left: 35svw;
     font-family: "Quicksand", sans-serif;
