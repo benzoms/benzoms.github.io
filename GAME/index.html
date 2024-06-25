@@ -1,0 +1,162 @@
+<html>
+    <head></head>
+    <style>
+        body {
+            
+            margin:0;
+            background-color: #C5F6FF;
+    border-radius: 20px 20px 50px;
+    border: 6px solid #522438;
+    box-shadow: inset 10px 0 rgba(255, 255, 255, 0.7), inset -10px 0 rgba(0, 0, 0, 0.2);
+            
+        }
+        canvas {
+            margin-top:50px;
+            box-sizing: border-box;
+            width:95dvw;
+            transform: translateX(2.5dvw);
+            height: 60svh;
+            border-bottom-right-radius: 50px;
+            border-top: 15px solid #ded2d1;
+border-right: 15px solid #ded2d1;
+border-bottom: 15px solid #ded2d1;
+border-left: 15px solid #ded2d1;
+border-color: #846662;
+
+        }
+        #controlscontainer {
+            
+            width: 100svw;
+            height: 30svh;
+            margin-top:40px;
+
+        }
+        #dpad {
+            margin-left: 15svw;
+            margin-right: 40px;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            box-sizing: border-box;
+            background-color: #9EA1AF;
+            border-radius: 50%;
+            padding:10px;
+
+            border: 10px solid #232020;
+
+        }
+
+        .horizontal-buttons {
+            display: flex;
+            
+            
+        }
+        #up {
+            box-shadow: inset 0 4px #fff;
+            border-bottom: none;
+            margin-bottom: -5px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            z-index: 3;
+        }
+        #left{
+            border-right: none;
+            margin-right: -5px;;
+            box-shadow: inset 0.5px 4px #fff, inset 0 -4px rgba(0,0,0,0.2);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        } 
+        #right {
+            border-left: none;
+            margin-left: -5px;
+            box-shadow: inset -0.5px 4px #fff, inset 0 -4px rgba(0,0,0,0.2);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            z-index: 3;
+        }
+        #down {
+            margin-top: -5px;
+            border-top: none;
+            box-shadow: inset 0 -4px rgba(0,0,0,0.2);
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .horizontal-buttons .btn {
+            width: 60px;
+            height: 60px;
+            z-index: 2;
+        }
+
+        .btn {
+            
+            width: 60px;
+            height: 60px;
+            
+            font-size: 40px;
+            border: none;
+            background-color: #846662;
+            color: white;
+            border-radius: 10px;
+            border-width:5px;
+            border-style: solid;
+            border-color: #522438;
+            user-select: none;
+        }
+
+        .btn:active {
+            background-color: #0056b3;
+        }
+        #mainbtns{
+            
+            float:right;
+            padding: 15px;
+            margin-right: 15svw;
+
+            margin-top: 40px;
+            background-color: #9EA1AF;
+            border-radius: 75px;
+            rotate: -20deg;
+
+            border: 10px solid #232020;
+        }
+        #mainbtns button{
+            margin-left: 15px;
+            margin-right: 15px;
+            rotate: 20deg;
+            height: 80px;
+            width: 80px;
+            background-color: #FC6963;
+            font-size: 40px;
+            border-radius: 50%;
+            box-shadow: inset 4px 0 rgba(255,255,255,0.7), inset -4px 0 rgba(0,0,0,0.2) ;
+        }
+        /*#abtn{
+            transform: translateY(60px);
+            
+        }*/
+    </style>
+    <body>
+        <!-- ↑←→↓ -->
+        <canvas></canvas>
+        <div id="controlscontainer">
+            <div id="dpad">
+                <button id="up" class="btn"></button>
+                <div class="horizontal-buttons">
+                    <button id="left" class="btn"></button>
+                    <div style="z-index:1;width:60px;background-color: #846662;"></div>
+                    <button id="right" class="btn"></button>
+                </div>
+                <button id="down" class="btn"></button>
+            </div>
+            <div id="mainbtns">
+                <button id="abtn">A</button>
+                <button id="bbtn">B</button>
+            </div>
+        </div>
+        <script src="classes.js"></script>
+        <script src="data/collisions.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
