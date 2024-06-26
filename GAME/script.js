@@ -13,7 +13,7 @@ for (let i = 0; i < collisions.length; i += 70) {
 
 const boundaries = []
 const offset = {
-    x: document.body.getBoundingClientRect().width*-1, // 576
+    x: document.body.getBoundingClientRect().width*-1.2, // 576
     y: document.body.getBoundingClientRect().height *-0.05
 }
 
@@ -32,10 +32,10 @@ collisionsMap.forEach((row, i) => {
 })
 
 const image = new Image()
-image.src = './img/gameMap2.png'
+image.src = './img/gameMap4x.png'
 
 const foregroundImage = new Image()
-foregroundImage.src = './img/foregroundObjects2.png'
+foregroundImage.src = './img/foregroundObjects4x.png'
 
 const playerDownImage = new Image()
 playerDownImage.src = './img/players64x96/livDown.png'
@@ -110,7 +110,7 @@ function rectangularCollision({ rectangle1, rectangle2 }) {
         rectangle1.position.y + rectangle1.height >= rectangle2.position.y
     )
 }
-const speed = 4 //default is 3
+const speed = 5 //default is 3
 function animate() {
     window.requestAnimationFrame(animate)
     background.draw()

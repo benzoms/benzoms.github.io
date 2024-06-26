@@ -41,12 +41,12 @@ class Sprite {
 
 class Boundary {
     //12*zoomlevel
-    static width = 36
-    static height = 36
+    static width = 48
+    static height = 48
     constructor({ position }) {
         this.position = position
-        this.width = 36
-        this.height = 36
+        this.width = 48
+        this.height = 48
     }
 
     draw() {
