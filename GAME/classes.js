@@ -38,6 +38,7 @@ class Sprite {
     }
 }
 
+
 class Boundary {
     //12*zoomlevel
     static width = 36

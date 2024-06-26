@@ -38,16 +38,16 @@ const foregroundImage = new Image()
 foregroundImage.src = './img/foregroundObjects2.png'
 
 const playerDownImage = new Image()
-playerDownImage.src = './img/livDown.png'
+playerDownImage.src = './img/players64x96/livDown.png'
 
 const playerUpImage = new Image()
-playerUpImage.src = './img/livUp.png'
+playerUpImage.src = './img/players64x96/livUp.png'
 
 const playerLeftImage = new Image()
-playerLeftImage.src = './img/livLeft.png'
+playerLeftImage.src = './img/players64x96/livLeft.png'
 
 const playerRightImage = new Image()
-playerRightImage.src = './img/livRight.png'
+playerRightImage.src = './img/players64x96/livRight.png'
 
 
 const player = new Sprite({
