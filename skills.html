@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamin Zhang — skills.sys</title>
+  <meta name="description" content="Benjamin Zhang — interactive skill tree: languages, frameworks, AI, cloud, and data tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Jacquard+12&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>try{document.documentElement.setAttribute("data-early-bg",localStorage.getItem("bz-bg-mode")||"scene")}catch(e){}</script>
+</head>
+<body data-bg="scene">
+
+  <div class="desktop-bg" aria-hidden="true">
+    <div class="scene">
+      <div class="sun"></div>
+      <div class="cloud cloud--1"></div>
+      <div class="cloud cloud--2"></div>
+      <div class="cloud cloud--3"></div>
+      <div class="cloud cloud--4"></div>
+      <div class="grass"></div>
+      <div class="flower flower--pink"></div>
+      <div class="flower flower--yellow"></div>
+      <div class="flower flower--white"></div>
+    </div>
+  </div>
+
+  <header class="system-bar">
+    <div class="system-bar__logo" aria-hidden="true"></div>
+    <a class="system-bar__title" href="index.html">BenZhang&nbsp;OS</a>
+    <div class="system-bar__spacer"></div>
+    <button class="bg-toggle" type="button">BG: SCENE</button>
+    <span class="system-bar__clock" aria-hidden="true">--:--</span>
+  </header>
+
+  <main class="desktop" style="max-width:1280px">
+    <h1 class="page-title">Skill Tree</h1>
+    <p class="page-subtitle">skills.sys — pick a branch · hover a node for details</p>
+
+    <section class="window skilltree-window reveal" aria-label="Interactive skill tree">
+      <div class="window__titlebar">
+        <span class="window__filename">skills.sys</span>
+        <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+      </div>
+      <div class="sk-tabs" role="tablist" aria-label="Skill categories">
+        <button class="sk-tab" type="button" role="tab" data-tree="frontend" aria-selected="true">Frontend</button>
+        <button class="sk-tab" type="button" role="tab" data-tree="backend" aria-selected="false">Backend</button>
+        <button class="sk-tab" type="button" role="tab" data-tree="fullstack" aria-selected="false">Full Stack</button>
+        <button class="sk-tab" type="button" role="tab" data-tree="ai" aria-selected="false">AI &amp; Data</button>
+        <button class="sk-tab" type="button" role="tab" data-tree="list" aria-selected="false">List</button>
+      </div>
+      <div class="window__body">
+        <div class="skilltree-controls">
+          <button type="button" id="sk-zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" id="sk-zoom-out" aria-label="Zoom out">−</button>
+          <button type="button" id="sk-reset" aria-label="Reset view">⌂</button>
+        </div>
+        <div class="skilltree-viewport" id="sk-viewport"></div>
+        <div class="sk-list" id="sk-list" hidden>
+          <p class="h-section">Languages</p>
+          <p>C · C++ · x64 Assembly · Java · C# · Python · R · JavaScript · TypeScript · HTML · CSS · SQL · KQL · Swift</p>
+          <p class="h-section">Tools &amp; Frameworks</p>
+          <p>Git · GitHub · Bitbucket · Bash · PowerShell · SwiftUI · React · Redux · NodeJS · Express · ASP.NET · Flask · PostgreSQL · MongoDB · Redis · Firebase · Azure · AWS · AWS Transcribe · SSMS · Kusto · OpenAI API · LangChain · MCP · Copilot · AI Agents · LLM Evaluation · Benchmarking · NumPy · Pandas · Matplotlib · Scikit-learn · TensorFlow · Tableau · Power BI · Figma · Postman · Playwright · Chrome Extensions · Shopify SDK · OAuth 2.0 · JWT · CI/CD</p>
+          <p class="h-section">Interests</p>
+          <p>Music Composition · Video Production · Game Design · Tennis</p>
+        </div>
+        <div class="pixel-tooltip" id="sk-tooltip" role="tooltip" aria-hidden="true">
+          <div class="pixel-tooltip__title"></div>
+          <div class="pixel-tooltip__body">
+            <span class="pixel-tooltip__meta"></span>
+            <span class="pixel-tooltip__text"></span>
+          </div>
+        </div>
+      </div>
+      <div class="window__footer quote-line"><span>✦ Every point earned in production.</span><span>⚔️</span></div>
+    </section>
+
+    <section class="window skilltree-legend reveal" id="sk-legend-window" aria-label="Skill tree legend">
+      <div class="window__titlebar">
+        <span class="window__filename">legend.ini</span>
+        <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+      </div>
+      <div class="window__body" id="sk-legend"></div>
+    </section>
+  </main>
+
+  <nav class="taskbar" aria-label="Site pages">
+    <div class="taskbar__tabs">
+      <a class="taskbar__tab" href="index.html"><span class="tab-icon" aria-hidden="true">⌂</span>home.exe</a>
+      <a class="taskbar__tab" href="timeline.html"><span class="tab-icon" aria-hidden="true">✦</span>timeline.ics</a>
+      <a class="taskbar__tab" href="projects.html"><span class="tab-icon" aria-hidden="true">◆</span>projects.exe</a>
+      <a class="taskbar__tab" href="skills.html" aria-current="page"><span class="tab-icon" aria-hidden="true">✎</span>skills.sys</a>
+      <a class="taskbar__tab" href="contact.html"><span class="tab-icon" aria-hidden="true">✉</span>contact.dll</a>
+    </div>
+    <a class="taskbar__resume" href="assets/BZ_RESUME_626.pdf" download="Benjamin_Zhang_Resume.pdf">⬇ resume.pdf</a>
+  </nav>
+
+  <script src="js/main.js"></script>
+  <script src="js/skilltree.js"></script>
+</body>
+</html>

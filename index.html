@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamin Zhang — home.exe</title>
+  <meta name="description" content="Benjamin Zhang — software engineer. Pixel-OS style resume site.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Jacquard+12&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>try{document.documentElement.setAttribute("data-early-bg",localStorage.getItem("bz-bg-mode")||"scene")}catch(e){}</script>
+</head>
+<body data-bg="scene">
+
+  <div class="desktop-bg" aria-hidden="true">
+    <div class="scene">
+      <div class="sun"></div>
+      <div class="cloud cloud--1"></div>
+      <div class="cloud cloud--2"></div>
+      <div class="cloud cloud--3"></div>
+      <div class="cloud cloud--4"></div>
+      <div class="grass"></div>
+      <div class="flower flower--pink"></div>
+      <div class="flower flower--yellow"></div>
+      <div class="flower flower--white"></div>
+    </div>
+  </div>
+
+  <header class="system-bar">
+    <div class="system-bar__logo" aria-hidden="true"></div>
+    <a class="system-bar__title" href="index.html">BenZhang&nbsp;OS</a>
+    <div class="system-bar__spacer"></div>
+    <button class="bg-toggle" type="button">BG: SCENE</button>
+    <span class="system-bar__clock" aria-hidden="true">--:--</span>
+  </header>
+
+  <main class="desktop">
+    <h1 class="page-title">Benjamin Zhang</h1>
+    <p class="page-subtitle">Software engineer · Bellevue, WA</p>
+
+    <div class="home-grid">
+
+      <section class="window reveal home-grid__profile" aria-label="Profile">
+        <div class="window__titlebar">
+          <span class="window__filename">profile.exe</span>
+          <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+        </div>
+        <div class="window__body profile-body">
+          <img class="profile-photo" src="assets/profilephoto.png" alt="Portrait of Benjamin Zhang">
+          <div>
+            <h2 class="entry__title">About me</h2>
+            <p class="profile-about">
+              I'm Ben — a full-stack software engineer who likes building tools people
+              actually use, from AI platforms at Microsoft to inventory apps for
+              30-person crews. NYU computer science grad, currently consulting on AI
+              automation. When I'm not shipping, I'm composing music, producing video,
+              designing games, or playing tennis.
+            </p>
+            <div class="badge-row">
+              <span class="badge badge--violet">Full-Stack</span>
+              <span class="badge badge--pink">AI / LLM</span>
+              <span class="badge badge--mint">iOS</span>
+              <span class="badge badge--blue">Data Viz</span>
+            </div>
+          </div>
+        </div>
+        <div class="window__footer quote-line">
+          <span>✦ Build things people actually use.</span><span>🙂</span>
+        </div>
+      </section>
+
+      <section class="window reveal" aria-label="Quick stats">
+        <div class="window__titlebar">
+          <span class="window__filename">stats.sys</span>
+          <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+        </div>
+        <div class="window__body">
+          <div class="stat-row">
+            <div class="stat-block">
+              <div class="stat-block__value">5+</div>
+              <div class="stat-block__label">Yrs shipping</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-block__value">7</div>
+              <div class="stat-block__label">Roles held</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-block__value">14</div>
+              <div class="stat-block__label">Languages</div>
+            </div>
+            <div class="stat-block">
+              <div class="stat-block__value">3</div>
+              <div class="stat-block__label">Side projects</div>
+            </div>
+          </div>
+        </div>
+        <div class="window__footer"><span>System: Ready</span></div>
+      </section>
+
+      <section class="window reveal" aria-label="Current role">
+        <div class="window__titlebar">
+          <span class="window__filename">current_role.exe</span>
+          <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+        </div>
+        <div class="window__body entry">
+          <p class="h-section">Now</p>
+          <div class="entry__head">
+            <span class="entry__title">D'Allessandro Corporation</span>
+            <span class="entry__dates">Present</span>
+          </div>
+          <p class="entry__role">AI Automation Solutions Consultant</p>
+          <ul>
+            <li>OpenClaw-powered analytics platform automating risk scoring across multi-year business records</li>
+            <li>Mobile-first inventory PWA (React/TypeScript, Express, PostgreSQL) for ~30 crew and admin users</li>
+            <li>Chrome extension that cut a 2-day insurance-rate process to 15–20 minutes</li>
+          </ul>
+          <p><a class="btn btn--secondary" href="timeline.html">open timeline.ics →</a></p>
+        </div>
+      </section>
+
+      <section class="window reveal" aria-label="Previous role">
+        <div class="window__titlebar">
+          <span class="window__filename">previous_role.exe</span>
+          <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+        </div>
+        <div class="window__body entry">
+          <p class="h-section">Previously</p>
+          <div class="entry__head">
+            <span class="entry__title">Microsoft</span>
+            <span class="entry__dates">Oct 2024 – May 2026</span>
+          </div>
+          <p class="entry__role">Software Development Engineer</p>
+          <ul>
+            <li>Copilot Studio: end-to-end AI scenario configuration portal, ~60× load-performance improvement</li>
+            <li>Copilot / BIC AI Platform: led CVE investigation and remediation across shared AI services</li>
+            <li>Office365 Admin Center: bulk role assignment across 1000+ roles, UX test automation +25% coverage</li>
+          </ul>
+          <p><a class="btn btn--secondary" href="timeline.html">open timeline.ics →</a></p>
+        </div>
+      </section>
+
+      <section class="window reveal home-grid__edu" aria-label="Education summary">
+        <div class="window__titlebar">
+          <span class="window__filename">education.ini</span>
+          <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+        </div>
+        <div class="window__body entry">
+          <div class="entry__head">
+            <span class="entry__title">New York University</span>
+            <span class="entry__dates">Sep 2020 – Jun 2024</span>
+          </div>
+          <p class="entry__role">B.A. Computer Science — New York, NY</p>
+          <div class="badge-row">
+            <span class="badge badge--violet">Major: Computer Science</span>
+            <span class="badge badge--mint">Minor: Data Science</span>
+            <span class="badge badge--pink">Minor: Media, Culture, &amp; Communication</span>
+          </div>
+          <ul>
+            <li>Technology Chief, NYU Baedeker travel magazine (2023 – 2024) — led a 12-week site overhaul and a 6-person web team</li>
+            <li>Director of Events, University Hall Parliament (2020 – 2021)</li>
+          </ul>
+          <div class="entry__head" style="margin-top:16px">
+            <span class="entry__title">Bellevue High School</span>
+            <span class="entry__dates">Sep 2016 – Jun 2020</span>
+          </div>
+          <p class="entry__role">Bellevue, WA</p>
+        </div>
+        <div class="window__footer quote-line"><span>✦ Go Violets.</span><span>🎓</span></div>
+      </section>
+
+    </div>
+  </main>
+
+  <nav class="taskbar" aria-label="Site pages">
+    <div class="taskbar__tabs">
+      <a class="taskbar__tab" href="index.html" aria-current="page"><span class="tab-icon" aria-hidden="true">⌂</span>home.exe</a>
+      <a class="taskbar__tab" href="timeline.html"><span class="tab-icon" aria-hidden="true">✦</span>timeline.ics</a>
+      <a class="taskbar__tab" href="projects.html"><span class="tab-icon" aria-hidden="true">◆</span>projects.exe</a>
+      <a class="taskbar__tab" href="skills.html"><span class="tab-icon" aria-hidden="true">✎</span>skills.sys</a>
+      <a class="taskbar__tab" href="contact.html"><span class="tab-icon" aria-hidden="true">✉</span>contact.dll</a>
+    </div>
+    <a class="taskbar__resume" href="assets/BZ_RESUME_626.pdf" download="Benjamin_Zhang_Resume.pdf">⬇ resume.pdf</a>
+  </nav>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

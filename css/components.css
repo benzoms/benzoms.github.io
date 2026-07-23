@@ -1,0 +1,229 @@
+/* Dreamwave OS — components */
+
+/* ============ Window ============ */
+
+.window {
+  background: var(--window);
+  border: var(--border-w) solid var(--window-border);
+  border-radius: var(--radius-window);
+  box-shadow: var(--shadow-window);
+  margin-bottom: 24px;
+}
+.window__titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px;
+  background: linear-gradient(var(--titlebar-top), var(--titlebar-bottom));
+  border-bottom: var(--border-w) solid var(--window-border);
+}
+.window__filename {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--text-strong);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.window__controls {
+  display: flex;
+  gap: 4px;
+}
+.window__controls span {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  line-height: 1;
+  color: var(--text-strong);
+  background: var(--window);
+  border: var(--border-w-thin) solid var(--window-border);
+  border-radius: var(--radius-window);
+  user-select: none;
+}
+.window__controls span:last-child:hover { color: var(--danger); border-color: var(--danger); }
+.window__body { padding: 16px; }
+.window__footer {
+  padding: 8px 16px;
+  background: var(--window-alt);
+  border-top: var(--border-w-thin) solid var(--window-border-soft);
+  color: var(--text-muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* section header inside windows */
+.h-section {
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+/* ============ Buttons ============ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: var(--radius-window);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn--primary {
+  color: var(--text-on-accent);
+  background: var(--accent);
+  border: var(--border-w) solid var(--accent-strong);
+  box-shadow: var(--shadow-raised);
+}
+.btn--primary:hover { background: var(--accent-strong); }
+.btn--primary:active { box-shadow: var(--shadow-pressed); transform: translate(1px, 1px); }
+.btn--secondary {
+  color: var(--text-strong);
+  background: var(--window);
+  border: var(--border-w) solid var(--window-border);
+  box-shadow: var(--shadow-raised);
+}
+.btn--secondary:hover { background: var(--window-alt); }
+.btn--secondary:active { box-shadow: var(--shadow-pressed); transform: translate(1px, 1px); }
+
+/* ============ Badges ============ */
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: var(--radius-window);
+  border: var(--border-w-thin) solid;
+}
+.badge--violet { background: var(--violet-fill); color: var(--violet-text); border-color: var(--violet); }
+.badge--pink   { background: var(--pink-fill);   color: var(--pink-text);   border-color: var(--pink); }
+.badge--mint   { background: var(--mint-fill);   color: var(--mint-text);   border-color: var(--mint); }
+.badge--warn   { background: var(--warn-fill);   color: var(--warn-text);   border-color: var(--warn); }
+.badge--blue   { background: var(--blue-fill);   color: var(--blue-text);   border-color: var(--blue); }
+.badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+
+/* ============ Entry (role/project inside a window) ============ */
+
+.entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+}
+.entry__title {
+  font-family: var(--font-pixel);
+  font-size: 18px;
+  color: var(--text-strong);
+}
+.entry__role { color: var(--text); font-weight: 700; }
+.entry__dates {
+  font-family: var(--font-geist-pixel);
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-left: auto;
+  white-space: nowrap;
+}
+.entry__sub {
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--violet-text);
+  margin: 10px 0 4px;
+}
+.entry ul { list-style: none; margin-top: 8px; }
+.entry li {
+  position: relative;
+  padding: 4px 0 4px 18px;
+}
+.entry li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+}
+.entry li:nth-child(even)::before { background: var(--pink); }
+
+/* ============ Stat blocks ============ */
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  text-align: center;
+}
+.stat-block + .stat-block { border-left: var(--border-w-thin) solid var(--window-border-soft); }
+.stat-block__label {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.stat-block__value {
+  font-family: var(--font-geist-pixel);
+  font-size: 32px;
+  color: var(--text-strong);
+  line-height: 1.2;
+}
+
+/* ============ Quote line ============ */
+
+.quote-line {
+  color: var(--text-muted);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* ============ Pixel tooltip (timeline + skill tree) ============ */
+
+.pixel-tooltip {
+  position: absolute;
+  z-index: 50;
+  max-width: 280px;
+  background: var(--window);
+  border: var(--border-w) solid var(--window-border);
+  border-radius: var(--radius-window);
+  box-shadow: var(--shadow-window);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 100ms steps(2, jump-end);
+}
+.pixel-tooltip.is-open { opacity: 1; }
+.pixel-tooltip__title {
+  font-family: var(--font-pixel);
+  font-size: 12px;
+  color: var(--text-strong);
+  background: linear-gradient(var(--titlebar-top), var(--titlebar-bottom));
+  border-bottom: var(--border-w-thin) solid var(--window-border);
+  padding: 4px 8px;
+}
+.pixel-tooltip__body {
+  padding: 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+.pixel-tooltip__meta {
+  font-family: var(--font-geist-pixel);
+  font-size: 12px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}

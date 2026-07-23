@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamin Zhang — projects.exe</title>
+  <meta name="description" content="Benjamin Zhang — projects: C.P.A., ProducTodo, SoberPro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Jacquard+12&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>try{document.documentElement.setAttribute("data-early-bg",localStorage.getItem("bz-bg-mode")||"scene")}catch(e){}</script>
+</head>
+<body data-bg="scene">
+
+  <div class="desktop-bg" aria-hidden="true">
+    <div class="scene">
+      <div class="sun"></div>
+      <div class="cloud cloud--1"></div>
+      <div class="cloud cloud--2"></div>
+      <div class="cloud cloud--3"></div>
+      <div class="cloud cloud--4"></div>
+      <div class="grass"></div>
+      <div class="flower flower--pink"></div>
+      <div class="flower flower--yellow"></div>
+      <div class="flower flower--white"></div>
+    </div>
+  </div>
+
+  <header class="system-bar">
+    <div class="system-bar__logo" aria-hidden="true"></div>
+    <a class="system-bar__title" href="index.html">BenZhang&nbsp;OS</a>
+    <div class="system-bar__spacer"></div>
+    <button class="bg-toggle" type="button">BG: SCENE</button>
+    <span class="system-bar__clock" aria-hidden="true">--:--</span>
+  </header>
+
+  <main class="desktop narrow-page" style="max-width:760px">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">projects.exe — 3 processes running</p>
+
+    <section class="window reveal" aria-label="C.P.A. project">
+      <div class="window__titlebar">
+        <span class="window__filename">cpa.exe</span>
+        <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+      </div>
+      <div class="window__body entry">
+        <div class="entry__head">
+          <span class="entry__title">C.P.A. — Claw Powered Accounting</span>
+          <span class="entry__dates">Jan 2026</span>
+        </div>
+        <div class="badge-row">
+          <span class="badge badge--pink">OpenClaw</span>
+          <span class="badge badge--blue">Forensic Data Analysis</span>
+          <span class="badge badge--violet">Automation</span>
+        </div>
+        <ul>
+          <li>Developed an OpenClaw-powered investigation research and evidence aggregation system automating cross-dataset fraud detection across QuickBooks audit trails, sales ledgers, credit memos, payroll, inventory, and financial statement data</li>
+          <li>Automated risk-scoring workflows identifying suspicious transaction patterns, high-risk accounts, user edit behavior clusters, employee-linked anomalies, and recurring accounting irregularities for forensic review</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="window reveal" aria-label="ProducTodo project">
+      <div class="window__titlebar">
+        <span class="window__filename">productodo.exe</span>
+        <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+      </div>
+      <div class="window__body entry">
+        <div class="entry__head">
+          <span class="entry__title">ProducTodo</span>
+          <span class="entry__dates">2022 – 2023</span>
+        </div>
+        <div class="badge-row">
+          <span class="badge badge--violet">NodeJS / Express</span>
+          <span class="badge badge--mint">MongoDB</span>
+          <span class="badge badge--pink">SASS</span>
+          <span class="badge badge--warn">Google SSO</span>
+        </div>
+        <ul>
+          <li>A productivity web app for your second monitor — animated gif backgrounds, a clock, todo lists, events, and more (NodeJS, MongoDB, Express, Handlebars)</li>
+          <li>Used SASS for CSS pre-compiling and integrated user authentication with Google SSO and Passport middleware</li>
+          <li>Fun fact: the pixel "Dreamwave OS" design language this very site uses was born in ProducTodo</li>
+        </ul>
+      </div>
+      <div class="window__footer quote-line"><span>✦ The origin of this OS.</span><span>🖥️</span></div>
+    </section>
+
+    <section class="window reveal" aria-label="SoberPro project">
+      <div class="window__titlebar">
+        <span class="window__filename">soberpro.exe</span>
+        <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+      </div>
+      <div class="window__body entry">
+        <div class="entry__head">
+          <span class="entry__title">SoberPro</span>
+          <span class="entry__dates">Fall 2021</span>
+        </div>
+        <div class="badge-row">
+          <span class="badge badge--mint">SwiftUI</span>
+          <span class="badge badge--blue">HealthKit</span>
+          <span class="badge badge--warn">Firebase ML</span>
+          <span class="badge badge--violet">Arduino</span>
+        </div>
+        <ul>
+          <li>Led development of a digital sobriety aid prototype that tracks vital signs and user input to chart stress and predict future cravings (SwiftUI, Objective-C for Arduino)</li>
+          <li>Built an iOS + Apple Watch app tracking HealthKit data with Google Firebase for storage and ML; processed data and predictions display as graphs on a touch-screen Arduino display</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <nav class="taskbar" aria-label="Site pages">
+    <div class="taskbar__tabs">
+      <a class="taskbar__tab" href="index.html"><span class="tab-icon" aria-hidden="true">⌂</span>home.exe</a>
+      <a class="taskbar__tab" href="timeline.html"><span class="tab-icon" aria-hidden="true">✦</span>timeline.ics</a>
+      <a class="taskbar__tab" href="projects.html" aria-current="page"><span class="tab-icon" aria-hidden="true">◆</span>projects.exe</a>
+      <a class="taskbar__tab" href="skills.html"><span class="tab-icon" aria-hidden="true">✎</span>skills.sys</a>
+      <a class="taskbar__tab" href="contact.html"><span class="tab-icon" aria-hidden="true">✉</span>contact.dll</a>
+    </div>
+    <a class="taskbar__resume" href="assets/BZ_RESUME_626.pdf" download="Benjamin_Zhang_Resume.pdf">⬇ resume.pdf</a>
+  </nav>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

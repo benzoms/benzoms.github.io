@@ -1,0 +1,48 @@
+/* Dreamwave OS — design tokens (from design_language.md §10) */
+:root {
+  /* fonts */
+  --font-pixel: "Pixelify Sans", "Geist Pixel", monospace;
+  --font-geist-pixel: "Geist Pixel", sans-serif;
+  --font-progression: "Jacquard 12", serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* surface & chrome */
+  --desktop: #7C77E0; --desktop-grid: #8E8AEA;
+  --bar: #4B3BC7; --bar-fg: #EDE9FF;
+  --window: #FBF6FF; --window-alt: #F2E9FE;
+  --titlebar-top: #F6E4FB; --titlebar-bottom: #E9D8FB;
+  --window-border: #4B3BC7; --window-border-soft: #B9A7F2;
+
+  /* text */
+  --text-strong: #3A2E8F; --text: #4A3D8A; --text-muted: #6E62B0;
+  --text-on-accent: #FFFFFF;
+
+  /* semantic accents (fixed) */
+  --violet: #8B5CF6; --violet-strong: #7C3AED;
+  --pink: #F774C6; --mint: #5FE3CE;
+  --danger: #F4609A; --warn: #F6C152;
+
+  /* user accent (default = violet) */
+  --accent: #8B5CF6; --accent-strong: #7C3AED;
+
+  /* priority-style palettes (badges, categories) */
+  --pink-fill: #FBD3EC; --pink-text: #C2367E;
+  --violet-fill: #E6DAFB; --violet-text: #6D45C9;
+  --mint-fill: #D2F6EF; --mint-text: #1F9C8A;
+  --warn-fill: #FDF0D2; --warn-text: #8A5F0B;
+  --blue: #6FA8FF; --blue-fill: #DCE9FF; --blue-text: #2F5FB3;
+
+  /* borders / radius / shadow */
+  --radius-window: 2px; --radius-pill: 6px;
+  --border-w: 2px; --border-w-thin: 1px;
+  --shadow-window: 4px 4px 0 rgba(75, 59, 199, 0.40);
+  --shadow-raised: 2px 2px 0 rgba(75, 59, 199, 0.35);
+  --shadow-pressed: inset 2px 2px 0 rgba(75, 59, 199, 0.25);
+
+  /* chrome heights */
+  --systembar-h: 48px; --taskbar-h: 52px;
+
+  /* pixel scene */
+  --sky-top: #4FA3E8; --sky-mid: #74BEF2; --sky-low: #A5DBF8;
+  --grass: #6FBF4C; --grass-dark: #4E9C38; --dirt: #8A6B44;
+}

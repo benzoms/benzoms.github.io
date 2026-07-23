@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamin Zhang — timeline.ics</title>
+  <meta name="description" content="Benjamin Zhang — full resume timeline: work, education, and projects, 2016 to present.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Jacquard+12&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script>try{document.documentElement.setAttribute("data-early-bg",localStorage.getItem("bz-bg-mode")||"scene")}catch(e){}</script>
+</head>
+<body data-bg="scene">
+
+  <div class="desktop-bg" aria-hidden="true">
+    <div class="scene">
+      <div class="sun"></div>
+      <div class="cloud cloud--1"></div>
+      <div class="cloud cloud--2"></div>
+      <div class="cloud cloud--3"></div>
+      <div class="cloud cloud--4"></div>
+      <div class="grass"></div>
+      <div class="flower flower--pink"></div>
+      <div class="flower flower--yellow"></div>
+      <div class="flower flower--white"></div>
+    </div>
+  </div>
+
+  <header class="system-bar">
+    <div class="system-bar__logo" aria-hidden="true"></div>
+    <a class="system-bar__title" href="index.html">BenZhang&nbsp;OS</a>
+    <div class="system-bar__spacer"></div>
+    <button class="bg-toggle" type="button">BG: SCENE</button>
+    <span class="system-bar__clock" aria-hidden="true">--:--</span>
+  </header>
+
+  <main class="desktop">
+    <p class="timeline-header-flavor">The Chronicle</p>
+    <h1 class="page-title">Timeline</h1>
+    <p class="page-subtitle">timeline.ics — the full resume · hover a node ◼ for a quick summary</p>
+
+    <div class="window timeline-controls reveal">
+      <div class="window__titlebar">
+        <span class="window__filename">filters.ini</span>
+        <span class="window__controls" aria-hidden="true"><span>_</span><span>▢</span><span>✕</span></span>
+      </div>
+      <div class="window__body">
+        <div class="tl-filters" role="group" aria-label="Filter timeline by category">
+          <button class="tl-filter" type="button" data-cat="all" aria-pressed="true">All</button>
+          <button class="tl-filter tl-filter--work" type="button" data-cat="work" aria-pressed="false">Work</button>
+          <button class="tl-filter tl-filter--edu" type="button" data-cat="edu" aria-pressed="false">Education</button>
+          <button class="tl-filter tl-filter--project" type="button" data-cat="project" aria-pressed="false">Projects</button>
+        </div>
+        <button class="tl-order" type="button" id="tl-order" aria-live="polite">↓ Newest first</button>
+      </div>
+    </div>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline__spine-track" aria-hidden="true"></div>
+      <div class="timeline__spine" id="spine" aria-hidden="true"></div>
+
+      <div class="timeline__group" data-year="2026">
+        <p class="timeline__year">2026</p>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: D'Allessandro Corporation"
+            data-title="D'Allessandro Corporation — AI Automation Solutions Consultant" data-dates="Present"
+            data-blurb="Analytics platform, inventory PWA for ~30 users, and a Chrome extension that turned 2 days into 20 minutes."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">dallessandro.csv</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">D'Allessandro Corporation</span>
+                <span class="entry__dates">Present</span>
+              </div>
+              <p class="entry__role">AI Automation Solutions Consultant</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--pink">OpenClaw</span>
+                <span class="badge badge--violet">React / TypeScript</span>
+                <span class="badge badge--blue">PostgreSQL</span>
+                <span class="badge badge--mint">Chrome Extensions</span>
+              </div>
+              <ul>
+                <li>Engineered an OpenClaw-powered internal analytics platform that analyzed multi-year business records across multiple data sources, automating risk scoring and surfacing insights for executive review</li>
+                <li>Architected and shipped a mobile-first inventory management PWA replacing a manual Excel workbook for ~30 crew and admin users, featuring role-based access control, atomic stock adjustments with full audit trails, and Excel import/export with automated diff previews</li>
+                <li>Built a Chrome extension that automated quarterly equipment insurance rate updates, cutting a manual 2-day process to 15–20 minutes by handling equipment searches, PDF downloads, rate extraction, and Excel updates</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="timeline__item timeline__item--project" data-cat="project">
+          <button class="timeline__node" type="button" aria-label="Details: C.P.A."
+            data-title="C.P.A. — Claw Powered Accounting" data-dates="Jan 2026"
+            data-blurb="OpenClaw-powered cross-dataset fraud detection and automated risk scoring for forensic review."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">cpa.exe</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">C.P.A. — Claw Powered Accounting</span>
+                <span class="entry__dates">Jan 2026</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge badge--pink">Project</span>
+                <span class="badge badge--pink">OpenClaw</span>
+                <span class="badge badge--blue">Forensic Data Analysis</span>
+              </div>
+              <ul>
+                <li>Developed an OpenClaw-powered investigation research and evidence aggregation system automating cross-dataset fraud detection across QuickBooks audit trails, sales ledgers, credit memos, payroll, inventory, and financial statement data</li>
+                <li>Automated risk-scoring workflows identifying suspicious transaction patterns, high-risk accounts, user edit behavior clusters, employee-linked anomalies, and recurring accounting irregularities for forensic review</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2025">
+        <p class="timeline__year">2025</p>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: HealthEats"
+            data-title="HealthEats — Founding Engineer" data-dates="Jun – Dec 2025"
+            data-blurb="Restaurant discovery startup: iOS + web on Firebase, plus hiring, marketing, and mentoring."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">healtheats.csv</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">HealthEats</span>
+                <span class="entry__dates">Jun – Dec 2025</span>
+              </div>
+              <p class="entry__role">Founding Engineer</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--mint">Swift / SwiftUI</span>
+                <span class="badge badge--violet">React</span>
+                <span class="badge badge--warn">Firebase / Firestore</span>
+              </div>
+              <ul>
+                <li>Led technical development for a restaurant discovery startup focused on verified health and nutrition transparency</li>
+                <li>Built end-to-end user experiences across iOS and web backed by Firebase + Firestore</li>
+                <li>Drove early company efforts beyond engineering — mentored a technical intern and contributed to hiring, marketing, and product strategy with a team of 6</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2024">
+        <p class="timeline__year">2024</p>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: Microsoft"
+            data-title="Microsoft — Software Development Engineer" data-dates="Oct 2024 – May 2026"
+            data-blurb="Copilot Studio, BIC AI Platform, and O365 Admin Center — AI portals, LLM benchmarking, UX automation."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">microsoft.csv</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">Microsoft</span>
+                <span class="entry__dates">Oct 2024 – May 2026</span>
+              </div>
+              <p class="entry__role">Software Development Engineer</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--violet">C# / ASP.NET</span>
+                <span class="badge badge--violet">React / Redux</span>
+                <span class="badge badge--blue">Kusto / KQL</span>
+                <span class="badge badge--pink">LLM Evaluation</span>
+                <span class="badge badge--mint">Playwright</span>
+              </div>
+              <p class="entry__sub">Copilot / BIC AI Platform</p>
+              <ul>
+                <li>Reduced security risk in production codebases by leading CVE investigation and remediation, including dependency upgrades and pipeline fixes across shared AI platform services</li>
+              </ul>
+              <p class="entry__sub">Copilot Studio</p>
+              <ul>
+                <li>Delivered an end-to-end AI scenario configuration portal (C#, React, Kusto, Python, ASP.NET) on Unify — ~60× load-performance improvement, self-service LLM scenario config, shadow experimentation, and A/B testing</li>
+                <li>Created agents and tools to monitor and benchmark top LLMs, providing Copilot teams with data-driven metrics like Citation Correctness &amp; Consistent Language</li>
+                <li>Led technical demos of new features to Copilot teams, folding feedback into product development with data scientists and end users</li>
+              </ul>
+              <p class="entry__sub">Office365 Admin Center</p>
+              <ul>
+                <li>Enhanced billing and volume-licensing UI/UX (React/Redux, Node.js) in an Agile environment</li>
+                <li>Engineered end-to-end UX test automation with GitHub Copilot + Playwright MCP — +25% coverage and natural-language test authoring for devs and non-devs</li>
+                <li>Built bulk role assignment across 1000+ roles, ~40% faster via batch API calls</li>
+                <li>Optimized coachmarks using telemetry from 200K+ sessions/month, +25% click-through rate</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2023">
+        <p class="timeline__year">2023</p>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: NYU Baedeker"
+            data-title="NYU Baedeker — Technology Chief" data-dates="2023 – 2024"
+            data-blurb="12-week website overhaul, ~40% cost cut, recruited and led a 6-person web team."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">baedeker.log</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">NYU Baedeker</span>
+                <span class="entry__dates">2023 – 2024</span>
+              </div>
+              <p class="entry__role">Technology Chief — travel magazine</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--warn">Leadership</span>
+              </div>
+              <ul>
+                <li>Led a 12-week overhaul of the magazine's website: centralized GitHub repo, site maps and change logs, native PDF hosting (~40% annual cost reduction), and migration to a modern host with analytics and maintainable infrastructure</li>
+                <li>Singlehandedly recruited and managed a 6-person web team of technical and non-technical members; identified issues and delegated to points of contact</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: FizzeeLabs"
+            data-title="FizzeeLabs — Full-Stack Developer" data-dates="Jun – Nov 2023"
+            data-blurb="Real-time AI visual aids for presentations (AWS Transcribe + ChatGPT API) for a ~$3B client."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">fizzeelabs.csv</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">FizzeeLabs</span>
+                <span class="entry__dates">Jun – Nov 2023</span>
+              </div>
+              <p class="entry__role">Full-Stack Developer</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--blue">AWS Transcribe</span>
+                <span class="badge badge--pink">ChatGPT API</span>
+                <span class="badge badge--violet">Flask</span>
+              </div>
+              <ul>
+                <li>Developed a full-stack AI web app generating visual aids in real time during presentations for a large real-estate client (~$3B annual revenue), using AWS Transcribe and the ChatGPT API with LucidChart and Flask</li>
+                <li>Collaborated directly with clients — user tests, feedback cycles, and live demos in client meetings</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2022">
+        <p class="timeline__year">2022</p>
+
+        <div class="timeline__item timeline__item--project" data-cat="project">
+          <button class="timeline__node" type="button" aria-label="Details: ProducTodo"
+            data-title="ProducTodo" data-dates="2022 – 2023"
+            data-blurb="Second-monitor productivity app (Node, Mongo, Express) — and the birthplace of this site's design language."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">productodo.exe</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">ProducTodo</span>
+                <span class="entry__dates">2022 – 2023</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge badge--pink">Project</span>
+                <span class="badge badge--violet">NodeJS / Express</span>
+                <span class="badge badge--mint">MongoDB</span>
+                <span class="badge badge--warn">Google SSO</span>
+              </div>
+              <ul>
+                <li>A productivity web app for your second monitor — animated gif backgrounds, a clock, todo lists, events, and more (NodeJS, MongoDB, Express, Handlebars)</li>
+                <li>Used SASS for CSS pre-compiling and integrated user authentication with Google SSO and Passport middleware</li>
+                <li>The pixel "Dreamwave OS" design language this very site uses was born here</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: The Clarity Team"
+            data-title="The Clarity Team — Data Visualization Engineer" data-dates="Jun – Dec 2022"
+            data-blurb="Tableau extensions and SQL pipelines for Fortune 500 clients; presented to C-suite."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">clarity_team.csv</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">The Clarity Team</span>
+                <span class="entry__dates">Jun – Dec 2022</span>
+              </div>
+              <p class="entry__role">Data Visualization Engineer</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--blue">Tableau</span>
+                <span class="badge badge--blue">SQL / SSMS</span>
+              </div>
+              <ul>
+                <li>Developed a Tableau server integration extension (JavaScript, HTML/CSS) to visually monitor supply-chain KPIs for Fortune 500 clients</li>
+                <li>Streamlined Tableau data input/queries with SSMS (SQL) to visualize sales performance data for customer retention; presented to C-suite executives for ongoing use</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2021">
+        <p class="timeline__year">2021</p>
+
+        <div class="timeline__item timeline__item--project" data-cat="project">
+          <button class="timeline__node" type="button" aria-label="Details: SoberPro"
+            data-title="SoberPro" data-dates="Fall 2021"
+            data-blurb="iOS + Apple Watch sobriety aid: HealthKit tracking, Firebase ML predictions, Arduino display."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">soberpro.exe</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">SoberPro</span>
+                <span class="entry__dates">Fall 2021</span>
+              </div>
+              <div class="badge-row">
+                <span class="badge badge--pink">Project</span>
+                <span class="badge badge--mint">SwiftUI</span>
+                <span class="badge badge--blue">HealthKit</span>
+                <span class="badge badge--warn">Firebase ML</span>
+              </div>
+              <ul>
+                <li>Led development of a digital sobriety aid prototype that tracks vital signs and user input to chart stress and predict future cravings (SwiftUI, Objective-C for Arduino)</li>
+                <li>Built an iOS + Apple Watch app tracking HealthKit data with Google Firebase for storage and ML; processed data and predictions display as graphs on a touch-screen Arduino display</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <div class="timeline__item" data-cat="work">
+          <button class="timeline__node" type="button" aria-label="Details: FanClub Digital"
+            data-title="FanClub Digital — iOS Development Intern" data-dates="Jun – Aug 2021"
+            data-blurb="Full-stack iOS stores for athletes: SwiftUI, Firebase, Shopify SDK, UPS API."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">fanclub_digital.csv</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">FanClub Digital</span>
+                <span class="entry__dates">Jun – Aug 2021</span>
+              </div>
+              <p class="entry__role">iOS Development Intern</p>
+              <div class="badge-row">
+                <span class="badge badge--violet">Work</span>
+                <span class="badge badge--mint">SwiftUI</span>
+                <span class="badge badge--warn">Firebase</span>
+                <span class="badge badge--violet">Shopify SDK</span>
+              </div>
+              <ul>
+                <li>Led full-stack development of athletes' custom stores on iOS/SwiftUI with Google Firebase and Shopify SDKs</li>
+                <li>Built UI menus from sketches (SwiftUI, Figma), data models for custom stores, cloud storage, and realtime shipping updates with address validation (UPS API)</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2020">
+        <p class="timeline__year">2020</p>
+
+        <div class="timeline__item timeline__item--edu" data-cat="edu">
+          <button class="timeline__node" type="button" aria-label="Details: New York University"
+            data-title="New York University" data-dates="Sep 2020 – Jun 2024"
+            data-blurb="B.A. Computer Science, minors in Data Science and Media, Culture, & Communication."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">nyu.ini</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">New York University</span>
+                <span class="entry__dates">2020 – 2024</span>
+              </div>
+              <p class="entry__role">B.A. Computer Science — New York, NY</p>
+              <div class="badge-row">
+                <span class="badge badge--mint">Education</span>
+                <span class="badge badge--mint">Minor: Data Science</span>
+                <span class="badge badge--pink">Minor: Media, Culture, &amp; Communication</span>
+              </div>
+              <ul>
+                <li>Major in Computer Science with minors in Data Science and Media, Culture, &amp; Communication</li>
+                <li>Director of Events, University Hall Parliament (Sep 2020 – May 2021)</li>
+                <li>Technology Chief of NYU Baedeker travel magazine (2023 – 2024)</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="timeline__group" data-year="2016">
+        <p class="timeline__year">2016</p>
+
+        <div class="timeline__item timeline__item--edu" data-cat="edu">
+          <button class="timeline__node" type="button" aria-label="Details: Bellevue High School"
+            data-title="Bellevue High School" data-dates="Sep 2016 – Jun 2020"
+            data-blurb="Where it all started — Bellevue, WA."></button>
+          <section class="window reveal">
+            <div class="window__titlebar"><span class="window__filename">bellevue_hs.ini</span></div>
+            <div class="window__body entry">
+              <div class="entry__head">
+                <span class="entry__title">Bellevue High School</span>
+                <span class="entry__dates">2016 – 2020</span>
+              </div>
+              <div class="badge-row"><span class="badge badge--mint">Education</span></div>
+              <p>High school in Bellevue, WA — where the first lines of code got written.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="pixel-tooltip" id="timeline-tooltip" role="tooltip" aria-hidden="true">
+        <div class="pixel-tooltip__title"></div>
+        <div class="pixel-tooltip__body">
+          <span class="pixel-tooltip__meta"></span>
+          <span class="pixel-tooltip__text"></span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <nav class="taskbar" aria-label="Site pages">
+    <div class="taskbar__tabs">
+      <a class="taskbar__tab" href="index.html"><span class="tab-icon" aria-hidden="true">⌂</span>home.exe</a>
+      <a class="taskbar__tab" href="timeline.html" aria-current="page"><span class="tab-icon" aria-hidden="true">✦</span>timeline.ics</a>
+      <a class="taskbar__tab" href="projects.html"><span class="tab-icon" aria-hidden="true">◆</span>projects.exe</a>
+      <a class="taskbar__tab" href="skills.html"><span class="tab-icon" aria-hidden="true">✎</span>skills.sys</a>
+      <a class="taskbar__tab" href="contact.html"><span class="tab-icon" aria-hidden="true">✉</span>contact.dll</a>
+    </div>
+    <a class="taskbar__resume" href="assets/BZ_RESUME_626.pdf" download="Benjamin_Zhang_Resume.pdf">⬇ resume.pdf</a>
+  </nav>
+
+  <script src="js/main.js"></script>
+  <script src="js/timeline.js"></script>
+</body>
+</html>
