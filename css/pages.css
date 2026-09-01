@@ -269,6 +269,17 @@
   stroke-width: 2.5;
   rx: 2;
 }
+.sk-node__shadow { fill: var(--skb-shadow); }
+.sk-b-root .sk-node__box { stroke: var(--skb-root); }
+.sk-b-tooling .sk-node__box, .sk-i-tooling { stroke: var(--skb-tooling); background: var(--skb-tooling); }
+.sk-b-systems .sk-node__box, .sk-i-systems { stroke: var(--skb-systems); background: var(--skb-systems); }
+.sk-b-dotnet .sk-node__box, .sk-i-dotnet { stroke: var(--skb-dotnet); background: var(--skb-dotnet); }
+.sk-b-python .sk-node__box, .sk-i-python { stroke: var(--skb-python); background: var(--skb-python); }
+.sk-b-data .sk-node__box, .sk-i-data { stroke: var(--skb-data); background: var(--skb-data); }
+.sk-b-web .sk-node__box, .sk-i-web { stroke: var(--skb-web); background: var(--skb-web); }
+.sk-b-mobile .sk-node__box, .sk-i-mobile { stroke: var(--skb-mobile); background: var(--skb-mobile); }
+.sk-b-appdev .sk-node__box, .sk-i-appdev { stroke: var(--skb-appdev); background: var(--skb-appdev); }
+.sk-b-cloud .sk-node__box, .sk-i-cloud { stroke: var(--skb-cloud); background: var(--skb-cloud); }
 .sk-node text {
   font-family: var(--font-pixel);
   font-size: 13px;

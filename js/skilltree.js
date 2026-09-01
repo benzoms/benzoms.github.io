@@ -7,18 +7,18 @@
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- branch palette ---------- */
+  /* ---------- branches (colors live in CSS as --skb-* so themes can restyle) ---------- */
   var BRANCHES = {
-    root:    { color: "#4B3BC7", label: null },
-    tooling: { color: "#8A7FC0", label: "Tooling & Version Control" },
-    systems: { color: "#6FA8FF", label: "Systems & Java" },
-    dotnet:  { color: "#8B5CF6", label: ".NET" },
-    python:  { color: "#F774C6", label: "Python & LLMs" },
-    data:    { color: "#F6C152", label: "Data & Analytics" },
-    web:     { color: "#5FE3CE", label: "Web (JS/TS)" },
-    mobile:  { color: "#6FE3A1", label: "Mobile (Swift)" },
-    appdev:  { color: "#F4609A", label: "Data & App Services" },
-    cloud:   { color: "#4FA3E8", label: "Cloud & Infra" }
+    root:    { label: null },
+    tooling: { label: "Tooling & Version Control" },
+    systems: { label: "Systems & Java" },
+    dotnet:  { label: ".NET" },
+    python:  { label: "Python & LLMs" },
+    data:    { label: "Data & Analytics" },
+    web:     { label: "Web (JS/TS)" },
+    mobile:  { label: "Mobile (Swift)" },
+    appdev:  { label: "Data & App Services" },
+    cloud:   { label: "Cloud & Infra" }
   };
 
   /* ---------- four trees (n = name, b = branch, t = tooltip, c = children) ---------- */
@@ -246,14 +246,14 @@
 
     nodes.forEach(function (d) {
       var g = el("g", {
-        "class": "sk-node" + (d.root ? " sk-node--root" : ""),
+        "class": "sk-node sk-b-" + d.b + (d.root ? " sk-node--root" : ""),
         transform: "translate(" + (d.x - d.w / 2) + "," + (d.y - d.h / 2) + ")",
         tabindex: "0",
         role: "img",
         "aria-label": d.n + ". " + (d.t || "")
       });
-      var shadow = el("rect", { width: d.w, height: d.h, x: 3, y: 3, fill: "rgba(75,59,199,0.25)", stroke: "none" });
-      var rect = el("rect", { width: d.w, height: d.h, stroke: BRANCHES[d.b].color });
+      var shadow = el("rect", { "class": "sk-node__shadow", width: d.w, height: d.h, x: 3, y: 3, stroke: "none" });
+      var rect = el("rect", { "class": "sk-node__box", width: d.w, height: d.h });
       var label = el("text", { x: d.w / 2, y: d.h / 2 + 1 });
       label.textContent = d.n;
       g.appendChild(shadow);
@@ -299,7 +299,7 @@
         var chip = document.createElement("span");
         chip.className = "legend-chip";
         var i = document.createElement("i");
-        i.style.background = BRANCHES[key].color;
+        i.className = "sk-i-" + key;
         chip.appendChild(i);
         chip.appendChild(document.createTextNode(" " + BRANCHES[key].label));
         legend.appendChild(chip);

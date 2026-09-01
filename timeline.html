@@ -9,11 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Jacquard+12&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/pages.css">
-  <script>try{document.documentElement.setAttribute("data-early-bg",localStorage.getItem("bz-bg-mode")||"scene")}catch(e){}</script>
+  <link rel="stylesheet" href="css/themes.css">
+  <script>try{var d=document.documentElement;d.setAttribute("data-early-bg",localStorage.getItem("bz-bg-mode")||"scene");d.setAttribute("data-theme",localStorage.getItem("bz-theme")||"terminal")}catch(e){document.documentElement.setAttribute("data-theme","terminal")}</script>
 </head>
 <body data-bg="scene">
 
@@ -33,8 +35,17 @@
 
   <header class="system-bar">
     <div class="system-bar__logo" aria-hidden="true"></div>
-    <a class="system-bar__title" href="index.html">BenZhang&nbsp;OS</a>
+    <a class="system-bar__title" href="index.html"><span class="t-os">BenZhang&nbsp;OS</span><span class="t-plain">Benjamin&nbsp;Zhang</span></a>
     <div class="system-bar__spacer"></div>
+    <div class="theme-switch">
+      <button class="theme-switch__btn" type="button" aria-haspopup="listbox" aria-expanded="false">Theme: Terminal</button>
+      <div class="theme-switch__menu" role="listbox" aria-label="Choose a theme" hidden>
+        <button type="button" role="option" data-theme-opt="terminal">Terminal</button>
+        <button type="button" role="option" data-theme-opt="editorial">Editorial</button>
+        <button type="button" role="option" data-theme-opt="blueprint">Blueprint</button>
+        <button type="button" role="option" data-theme-opt="pixel">Pixel</button>
+      </div>
+    </div>
     <button class="bg-toggle" type="button">BG: SCENE</button>
     <span class="system-bar__clock" aria-hidden="true">--:--</span>
   </header>
@@ -42,7 +53,7 @@
   <main class="desktop">
     <p class="timeline-header-flavor">The Chronicle</p>
     <h1 class="page-title">Timeline</h1>
-    <p class="page-subtitle">timeline.ics — the full resume · hover a node ◼ for a quick summary</p>
+    <p class="page-subtitle"><span class="t-os">timeline.ics — the full resume · hover a node ◼ for a quick summary</span><span class="t-plain">The full résumé · hover a node for a quick summary</span></p>
 
     <div class="window timeline-controls reveal">
       <div class="window__titlebar">
@@ -423,13 +434,13 @@
 
   <nav class="taskbar" aria-label="Site pages">
     <div class="taskbar__tabs">
-      <a class="taskbar__tab" href="index.html"><span class="tab-icon" aria-hidden="true">⌂</span>home.exe</a>
-      <a class="taskbar__tab" href="timeline.html" aria-current="page"><span class="tab-icon" aria-hidden="true">✦</span>timeline.ics</a>
-      <a class="taskbar__tab" href="projects.html"><span class="tab-icon" aria-hidden="true">◆</span>projects.exe</a>
-      <a class="taskbar__tab" href="skills.html"><span class="tab-icon" aria-hidden="true">✎</span>skills.sys</a>
-      <a class="taskbar__tab" href="contact.html"><span class="tab-icon" aria-hidden="true">✉</span>contact.dll</a>
+      <a class="taskbar__tab" href="index.html"><span class="tab-icon" aria-hidden="true">⌂</span><span class="t-os">home.exe</span><span class="t-plain">Home</span></a>
+      <a class="taskbar__tab" href="timeline.html" aria-current="page"><span class="tab-icon" aria-hidden="true">✦</span><span class="t-os">timeline.ics</span><span class="t-plain">Timeline</span></a>
+      <a class="taskbar__tab" href="projects.html"><span class="tab-icon" aria-hidden="true">◆</span><span class="t-os">projects.exe</span><span class="t-plain">Projects</span></a>
+      <a class="taskbar__tab" href="skills.html"><span class="tab-icon" aria-hidden="true">✎</span><span class="t-os">skills.sys</span><span class="t-plain">Skills</span></a>
+      <a class="taskbar__tab" href="contact.html"><span class="tab-icon" aria-hidden="true">✉</span><span class="t-os">contact.dll</span><span class="t-plain">Contact</span></a>
     </div>
-    <a class="taskbar__resume" href="assets/BZ_RESUME_626.pdf" download="Benjamin_Zhang_Resume.pdf">⬇ resume.pdf</a>
+    <a class="taskbar__resume" href="assets/BZ_RESUME_626.pdf" download="Benjamin_Zhang_Resume.pdf"><span class="t-os">⬇ resume.pdf</span><span class="t-plain">Résumé (PDF)</span></a>
   </nav>
 
   <script src="js/main.js"></script>

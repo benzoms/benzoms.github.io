@@ -1,0 +1,444 @@
+/* ============================================================
+   Themes — Terminal (default) / Editorial / Blueprint / Pixel
+   Pixel (the original Dreamwave OS look) = the base tokens; each theme overrides tokens plus
+   a small set of structural rules. Selected via html[data-theme].
+   ============================================================ */
+
+/* ---------- dual-idiom labels ---------- */
+/* .t-os = OS-metaphor wording · .t-plain = professional wording */
+.t-plain { display: none; }
+html[data-theme="editorial"] .t-os,
+html[data-theme="blueprint"] .t-os { display: none; }
+html[data-theme="editorial"] .t-plain,
+html[data-theme="blueprint"] .t-plain { display: inline; }
+
+/* BG scene/grid toggle only applies to the Pixel theme */
+html:not([data-theme="pixel"]) .bg-toggle { display: none; }
+html:not([data-theme="pixel"]) .scene { display: none; }
+
+/* ---------- theme switcher (styled by each theme's tokens) ---------- */
+.theme-switch { position: relative; }
+.theme-switch__btn {
+  font-family: var(--font-pixel);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--bar-fg);
+  background: transparent;
+  border: var(--border-w) solid var(--bar-fg);
+  border-radius: var(--radius-window);
+  padding: 4px 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.theme-switch__btn:hover { background: rgba(127, 127, 127, 0.18); }
+.theme-switch__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 200;
+  min-width: 150px;
+  background: var(--window);
+  border: var(--border-w) solid var(--window-border);
+  border-radius: var(--radius-window);
+  box-shadow: var(--shadow-window);
+  padding: 4px;
+}
+.theme-switch__menu [data-theme-opt] {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-pixel);
+  font-size: 13px;
+  color: var(--text-strong);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-window);
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.theme-switch__menu [data-theme-opt]:hover { background: var(--window-alt); }
+.theme-switch__menu [data-theme-opt][aria-selected="true"] {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+/* ============================================================
+   EDITORIAL — print magazine: cream paper, Fraunces serifs,
+   hairline ink rules, generous whitespace.
+   ============================================================ */
+
+html[data-theme="editorial"] {
+  --font-pixel: "Fraunces", Georgia, serif;
+  --font-geist-pixel: "Fraunces", Georgia, serif;
+  --font-progression: "Fraunces", Georgia, serif;
+  --font-mono: "Source Serif 4", Georgia, serif;
+
+  --desktop: #F4EFE5; --desktop-grid: #F4EFE5;
+  --bar: #F4EFE5; --bar-fg: #1F1B13;
+  --window: #FDFBF5; --window-alt: #F1EBDD;
+  --titlebar-top: #FDFBF5; --titlebar-bottom: #FDFBF5;
+  --window-border: #262215; --window-border-soft: #D8D0BE;
+
+  --text-strong: #1F1B13; --text: #2C2820; --text-muted: #6E675A;
+  --text-on-accent: #FDFBF5;
+
+  --violet: #3F4C8C; --violet-strong: #333F78;
+  --pink: #8C3557; --mint: #3F7258;
+  --danger: #8C2F2F; --warn: #B07A18;
+  --accent: #8C2F2F; --accent-strong: #6E2424;
+
+  --pink-fill: #F3E3E9; --pink-text: #7C2C4C;
+  --violet-fill: #E7EAF4; --violet-text: #3A4577;
+  --mint-fill: #E1EEE7; --mint-text: #2F5C46;
+  --warn-fill: #F4EBD7; --warn-text: #74540E;
+  --blue: #4C6B9A; --blue-fill: #E3EAF3; --blue-text: #3A567E;
+
+  --radius-window: 0; --radius-pill: 0;
+  --border-w: 1px; --border-w-thin: 1px;
+  --shadow-window: none; --shadow-raised: none; --shadow-pressed: none;
+
+  --skb-root: #262215; --skb-tooling: #6E675A; --skb-systems: #4C6B9A;
+  --skb-dotnet: #3F4C8C; --skb-python: #8C3557; --skb-data: #B07A18;
+  --skb-web: #3F7258; --skb-mobile: #567A3F; --skb-appdev: #8C2F2F;
+  --skb-cloud: #2F6B8C; --skb-shadow: transparent;
+}
+
+html[data-theme="editorial"] body { font-size: 16px; line-height: 1.6; }
+html[data-theme="editorial"] .desktop-bg { background: var(--desktop); }
+
+/* chrome: masthead + footer rule */
+html[data-theme="editorial"] .system-bar { border-bottom: 2px solid var(--window-border); }
+html[data-theme="editorial"] .system-bar__logo { background: var(--accent); box-shadow: none; border-radius: 50%; }
+html[data-theme="editorial"] .system-bar__title { font-size: 18px; font-weight: 600; letter-spacing: 0.3px; }
+html[data-theme="editorial"] .taskbar { border-top: 2px solid var(--window-border); }
+html[data-theme="editorial"] .taskbar__tab {
+  background: none; border: none; box-shadow: none;
+  font-family: var(--font-mono); font-size: 15px;
+  color: var(--text-strong); padding: 6px 4px; margin: 0 6px;
+}
+html[data-theme="editorial"] .taskbar__tab:hover { background: none; text-decoration: underline; }
+html[data-theme="editorial"] .taskbar__tab[aria-current="page"] {
+  transform: none; box-shadow: none; background: none;
+  border-bottom: 2px solid var(--accent); font-weight: 600;
+}
+html[data-theme="editorial"] .taskbar__tab .tab-icon { display: none; }
+html[data-theme="editorial"] .taskbar__resume {
+  font-family: var(--font-mono); font-size: 14px; font-weight: 600;
+}
+
+/* windows become ruled article cards */
+html[data-theme="editorial"] .window { border-top-width: 3px; }
+html[data-theme="editorial"] .window__titlebar,
+html[data-theme="editorial"] .window__footer { display: none; }
+html[data-theme="editorial"] .window__body { padding: 24px 28px; }
+
+/* headings without the white-on-sky treatment */
+html[data-theme="editorial"] .page-title {
+  color: var(--text-strong); text-shadow: none; text-transform: none;
+  font-size: 40px; font-weight: 600; letter-spacing: 0;
+}
+html[data-theme="editorial"] .page-subtitle { color: var(--text-muted); text-shadow: none; font-style: italic; }
+html[data-theme="editorial"] .timeline-header-flavor {
+  color: var(--text-muted); text-shadow: none; font-style: italic; font-size: 26px; font-weight: 400;
+}
+html[data-theme="editorial"] .entry__title { font-size: 22px; font-weight: 600; }
+html[data-theme="editorial"] .entry__sub { font-weight: 600; font-size: 15px; color: var(--text-strong); }
+html[data-theme="editorial"] .h-section,
+html[data-theme="editorial"] .stat-block__label {
+  font-family: var(--font-mono); letter-spacing: 2px; font-size: 11px;
+}
+html[data-theme="editorial"] .badge {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; padding: 3px 9px;
+}
+html[data-theme="editorial"] .entry li::before {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--text-strong); top: 12px;
+}
+html[data-theme="editorial"] .entry li:nth-child(even)::before { background: var(--text-strong); }
+
+/* softer reveal */
+html[data-theme="editorial"] .reveal { transform: translateY(14px); }
+html[data-theme="editorial"] .reveal.is-visible {
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+
+/* timeline furniture on cream */
+html[data-theme="editorial"] .timeline__spine { background: var(--text-strong); width: 2px; margin-left: -1px; }
+html[data-theme="editorial"] .timeline__spine-track { background: rgba(38, 34, 21, 0.15); width: 2px; margin-left: -1px; }
+html[data-theme="editorial"] .timeline__year {
+  background: var(--desktop); color: var(--text-strong);
+  font-style: italic; font-size: 20px; border-width: 0 0 2px;
+}
+html[data-theme="editorial"] .timeline__node { border-radius: 50%; }
+html[data-theme="editorial"] .timeline__item::after { height: 1px; background: rgba(38, 34, 21, 0.35); top: 37px; }
+
+html[data-theme="editorial"] .skilltree-viewport {
+  background-image:
+    linear-gradient(rgba(38, 34, 21, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 34, 21, 0.05) 1px, transparent 1px);
+}
+html[data-theme="editorial"] .sk-node text { font-size: 12.5px; font-weight: 600; }
+html[data-theme="editorial"] .sk-node rect { stroke-width: 1.5; }
+html[data-theme="editorial"] .sk-node--root rect { stroke-width: 2.5; }
+html[data-theme="editorial"] .profile-photo { border-width: 1px; }
+
+/* ============================================================
+   BLUEPRINT — drafting table: deep navy grid, white sheets,
+   IBM Plex, FIG. numbering, dashed annotation rules.
+   ============================================================ */
+
+html[data-theme="blueprint"] {
+  --font-pixel: "IBM Plex Mono", ui-monospace, monospace;
+  --font-geist-pixel: "IBM Plex Mono", ui-monospace, monospace;
+  --font-progression: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "IBM Plex Sans", -apple-system, sans-serif;
+
+  --desktop: #123B63; --desktop-grid: #123B63;
+  --bar: #0C2A47; --bar-fg: #D9E7F5;
+  --window: #F7FAFD; --window-alt: #EAF1F8;
+  --titlebar-top: #F7FAFD; --titlebar-bottom: #F7FAFD;
+  --window-border: #1E4E7E; --window-border-soft: #B9CCE0;
+
+  --text-strong: #12385E; --text: #1F3E58; --text-muted: #52708C;
+  --text-on-accent: #F7FAFD;
+
+  --violet: #4C51BF; --violet-strong: #3C40A0;
+  --pink: #A63D6F; --mint: #2F7A5C;
+  --danger: #B33A3A; --warn: #9A6A10;
+  --accent: #1E6FA8; --accent-strong: #175A88;
+
+  --pink-fill: #F4E4EC; --pink-text: #8C3059;
+  --violet-fill: #E6E7F7; --violet-text: #3C40A0;
+  --mint-fill: #E0EFE8; --mint-text: #256248;
+  --warn-fill: #F5ECD8; --warn-text: #74500C;
+  --blue: #3182CE; --blue-fill: #E1ECF7; --blue-text: #21598C;
+
+  --radius-window: 0; --radius-pill: 0;
+  --border-w: 1px; --border-w-thin: 1px;
+  --shadow-window: none; --shadow-raised: none; --shadow-pressed: none;
+
+  --skb-root: #12385E; --skb-tooling: #52708C; --skb-systems: #2C5F8F;
+  --skb-dotnet: #4C51BF; --skb-python: #B4531F; --skb-data: #9A6A10;
+  --skb-web: #17789E; --skb-mobile: #2F7A5C; --skb-appdev: #A63D6F;
+  --skb-cloud: #3182CE; --skb-shadow: transparent;
+}
+
+html[data-theme="blueprint"] body { font-size: 15px; line-height: 1.55; }
+html[data-theme="blueprint"] .desktop-bg {
+  background-color: var(--desktop);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+html[data-theme="blueprint"] .system-bar { border-bottom: 1px solid rgba(217, 231, 245, 0.4); }
+html[data-theme="blueprint"] .system-bar__logo {
+  background: transparent; box-shadow: none;
+  border: 1px solid var(--bar-fg);
+}
+html[data-theme="blueprint"] .system-bar__title { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+html[data-theme="blueprint"] .taskbar { border-top: 1px solid rgba(217, 231, 245, 0.4); }
+html[data-theme="blueprint"] .taskbar__tab {
+  background: transparent; color: var(--bar-fg);
+  border: 1px solid rgba(217, 231, 245, 0.45); box-shadow: none;
+  text-transform: uppercase; letter-spacing: 1px; font-size: 11px;
+}
+html[data-theme="blueprint"] .taskbar__tab:hover { background: rgba(217, 231, 245, 0.12); }
+html[data-theme="blueprint"] .taskbar__tab[aria-current="page"] {
+  background: var(--bar-fg); color: var(--text-strong); transform: none; box-shadow: none;
+}
+html[data-theme="blueprint"] .taskbar__tab .tab-icon { display: none; }
+html[data-theme="blueprint"] .taskbar__resume { text-transform: uppercase; letter-spacing: 1px; font-size: 11px; }
+
+/* windows = numbered figures */
+html[data-theme="blueprint"] main { counter-reset: fig; }
+html[data-theme="blueprint"] .window__titlebar {
+  counter-increment: fig;
+  height: 30px; background: transparent;
+  border-bottom: 1px dashed var(--window-border-soft);
+}
+html[data-theme="blueprint"] .window__titlebar::before {
+  content: "FIG. " counter(fig, decimal-leading-zero);
+  font-family: var(--font-pixel); font-size: 11px;
+  letter-spacing: 2px; color: var(--text-muted);
+}
+html[data-theme="blueprint"] .window__filename,
+html[data-theme="blueprint"] .window__controls,
+html[data-theme="blueprint"] .window__footer { display: none; }
+html[data-theme="blueprint"] .window__body { padding: 20px 24px; }
+
+html[data-theme="blueprint"] .page-title {
+  color: #EAF2FA; text-shadow: none;
+  font-size: 24px; letter-spacing: 4px;
+}
+html[data-theme="blueprint"] .page-subtitle { color: #B9CCE0; text-shadow: none; }
+html[data-theme="blueprint"] .timeline-header-flavor {
+  color: #B9CCE0; text-shadow: none; font-size: 13px;
+  text-transform: uppercase; letter-spacing: 4px;
+}
+html[data-theme="blueprint"] .entry__title { font-size: 17px; font-weight: 600; letter-spacing: 0.5px; }
+html[data-theme="blueprint"] .h-section,
+html[data-theme="blueprint"] .stat-block__label { letter-spacing: 2px; }
+html[data-theme="blueprint"] .badge { letter-spacing: 1px; }
+html[data-theme="blueprint"] .entry li::before {
+  background: transparent; border: 1px solid var(--accent); top: 8px;
+}
+html[data-theme="blueprint"] .entry li:nth-child(even)::before { border-color: var(--accent); background: transparent; }
+
+html[data-theme="blueprint"] .reveal { transform: translateY(10px); }
+html[data-theme="blueprint"] .reveal.is-visible {
+  transition: opacity 250ms ease-out, transform 250ms ease-out;
+}
+
+/* timeline furniture on navy */
+html[data-theme="blueprint"] .timeline__spine { background: #EAF2FA; width: 2px; margin-left: -1px; }
+html[data-theme="blueprint"] .timeline__spine-track { background: rgba(234, 242, 250, 0.25); width: 2px; margin-left: -1px; }
+html[data-theme="blueprint"] .timeline__year {
+  background: var(--desktop); color: #EAF2FA;
+  border: 1px dashed rgba(234, 242, 250, 0.6);
+}
+html[data-theme="blueprint"] .timeline__node { border-color: #EAF2FA; }
+html[data-theme="blueprint"] .timeline__item::after { height: 1px; background: rgba(234, 242, 250, 0.45); top: 37px; }
+
+html[data-theme="blueprint"] .skilltree-viewport {
+  background-image:
+    linear-gradient(rgba(30, 78, 126, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 78, 126, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+html[data-theme="blueprint"] .sk-node rect { stroke-width: 1.5; }
+html[data-theme="blueprint"] .sk-node--root rect { stroke-width: 2.5; }
+html[data-theme="blueprint"] .sk-node text { font-size: 12px; }
+html[data-theme="blueprint"] .profile-photo { border-width: 1px; }
+
+/* ============================================================
+   TERMINAL — modern muted dark IDE (Tokyo Night flavored):
+   charcoal panes, JetBrains Mono, soft syntax accents.
+   Keeps the OS metaphor — file paths are native here. The default theme.
+   ============================================================ */
+
+html[data-theme="terminal"] {
+  --font-pixel: "JetBrains Mono", ui-monospace, monospace;
+  --font-geist-pixel: "JetBrains Mono", ui-monospace, monospace;
+  --font-progression: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --desktop: #16161E; --desktop-grid: #16161E;
+  --bar: #121218; --bar-fg: #C0CAF5;
+  --window: #1A1B26; --window-alt: #20222E;
+  --titlebar-top: #20222E; --titlebar-bottom: #20222E;
+  --window-border: #3B4261; --window-border-soft: #2A2C3D;
+
+  --text-strong: #E0E6FF; --text: #C0CAF5; --text-muted: #9AA5CE;
+  --text-on-accent: #14141B;
+
+  --violet: #BB9AF7; --violet-strong: #A585E8;
+  --pink: #F7768E; --mint: #9ECE6A;
+  --danger: #F7768E; --warn: #E0AF68;
+  --accent: #7AA2F7; --accent-strong: #5D87E0;
+
+  --pink-fill: rgba(247, 118, 142, 0.14); --pink-text: #F7768E;
+  --violet-fill: rgba(187, 154, 247, 0.14); --violet-text: #BB9AF7;
+  --mint-fill: rgba(158, 206, 106, 0.14); --mint-text: #9ECE6A;
+  --warn-fill: rgba(224, 175, 104, 0.14); --warn-text: #E0AF68;
+  --blue: #7DCFFF; --blue-fill: rgba(125, 207, 255, 0.14); --blue-text: #7DCFFF;
+
+  --radius-window: 6px; --radius-pill: 6px;
+  --border-w: 1px; --border-w-thin: 1px;
+  --shadow-window: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-raised: none; --shadow-pressed: none;
+
+  --skb-root: #7AA2F7; --skb-tooling: #565F89; --skb-systems: #7DCFFF;
+  --skb-dotnet: #9D7CD8; --skb-python: #F7768E; --skb-data: #E0AF68;
+  --skb-web: #73DACA; --skb-mobile: #9ECE6A; --skb-appdev: #FF9E64;
+  --skb-cloud: #7AA2F7; --skb-shadow: rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme="terminal"] body { font-size: 14.5px; line-height: 1.6; }
+html[data-theme="terminal"] .desktop-bg {
+  background-color: var(--desktop);
+  background-image:
+    linear-gradient(rgba(192, 202, 245, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 202, 245, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+html[data-theme="terminal"] .system-bar { border-bottom: 1px solid #2A2C3D; }
+html[data-theme="terminal"] .system-bar__logo { background: var(--mint); box-shadow: none; border-radius: 3px; }
+html[data-theme="terminal"] .system-bar__title::after { content: " ~"; color: var(--text-muted); }
+html[data-theme="terminal"] .taskbar { border-top: 1px solid #2A2C3D; }
+html[data-theme="terminal"] .taskbar__tab {
+  background: transparent; color: var(--text-muted);
+  border: 1px solid transparent; box-shadow: none;
+}
+html[data-theme="terminal"] .taskbar__tab:hover { background: var(--window-alt); color: var(--text); }
+html[data-theme="terminal"] .taskbar__tab[aria-current="page"] {
+  background: var(--window-alt); color: var(--accent);
+  border-color: var(--window-border); transform: none; box-shadow: none;
+}
+html[data-theme="terminal"] .theme-switch__btn,
+html[data-theme="terminal"] .bg-toggle { border-color: #3B4261; }
+
+/* windows = panes with mac-style dots and a path in the titlebar */
+html[data-theme="terminal"] .window__titlebar { height: 32px; border-bottom-color: #2A2C3D; }
+html[data-theme="terminal"] .window__filename { color: var(--text-muted); font-size: 12px; }
+html[data-theme="terminal"] .window__filename::before { content: "~/ben/"; opacity: 0.6; }
+html[data-theme="terminal"] .window__controls span {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: none; background: #3B4261; font-size: 0;
+}
+html[data-theme="terminal"] .window__controls span:last-child:hover { background: var(--danger); }
+html[data-theme="terminal"] .window__footer { border-top-color: #2A2C3D; }
+html[data-theme="terminal"] .quote-line span:first-child::before { content: "# "; color: var(--mint); }
+
+html[data-theme="terminal"] .page-title {
+  color: var(--text-strong); text-shadow: none;
+  font-size: 24px; letter-spacing: 1px;
+}
+html[data-theme="terminal"] .page-title::before { content: "$ "; color: var(--mint); }
+html[data-theme="terminal"] .page-subtitle { color: var(--text-muted); text-shadow: none; }
+html[data-theme="terminal"] .timeline-header-flavor {
+  color: var(--text-muted); text-shadow: none;
+  font-size: 13px; letter-spacing: 2px; text-transform: lowercase;
+}
+html[data-theme="terminal"] .timeline-header-flavor::before { content: "// "; }
+html[data-theme="terminal"] .entry__title { font-size: 17px; font-weight: 700; }
+html[data-theme="terminal"] .entry__sub { color: var(--blue); }
+html[data-theme="terminal"] .entry li::before {
+  background: transparent; content: "▸"; color: var(--mint);
+  width: auto; height: auto; top: 4px; font-size: 12px;
+}
+html[data-theme="terminal"] .entry li:nth-child(even)::before { background: transparent; color: var(--mint); }
+
+html[data-theme="terminal"] .reveal { transform: translateY(8px); }
+html[data-theme="terminal"] .reveal.is-visible {
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+/* timeline furniture on charcoal */
+html[data-theme="terminal"] .timeline__spine { background: var(--accent); width: 2px; margin-left: -1px; }
+html[data-theme="terminal"] .timeline__spine-track { background: #2A2C3D; width: 2px; margin-left: -1px; }
+html[data-theme="terminal"] .timeline__year {
+  background: var(--window); color: var(--warn);
+  border: 1px solid var(--window-border);
+}
+html[data-theme="terminal"] .timeline__node { border-color: var(--window-border); }
+html[data-theme="terminal"] .timeline__item::after { height: 1px; background: #3B4261; top: 37px; }
+
+html[data-theme="terminal"] .skilltree-viewport {
+  background-color: var(--desktop);
+  background-image:
+    linear-gradient(rgba(192, 202, 245, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 202, 245, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+html[data-theme="terminal"] .sk-link { stroke: #3B4261; }
+html[data-theme="terminal"] .sk-node rect { stroke-width: 1.5; }
+html[data-theme="terminal"] .sk-node--root rect { stroke-width: 2.5; }
+html[data-theme="terminal"] .sk-node text { font-size: 12px; }
+html[data-theme="terminal"] .sk-node:hover rect,
+html[data-theme="terminal"] .sk-node:focus-visible rect { fill: var(--window-alt); }
+html[data-theme="terminal"] .profile-photo { border-width: 1px; }

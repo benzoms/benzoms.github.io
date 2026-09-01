@@ -42,6 +42,13 @@
   /* chrome heights */
   --systembar-h: 48px; --taskbar-h: 52px;
 
+  /* skill-tree branch colors (overridden per theme) */
+  --skb-root: #4B3BC7; --skb-tooling: #8A7FC0; --skb-systems: #6FA8FF;
+  --skb-dotnet: #8B5CF6; --skb-python: #F774C6; --skb-data: #F6C152;
+  --skb-web: #5FE3CE; --skb-mobile: #6FE3A1; --skb-appdev: #F4609A;
+  --skb-cloud: #4FA3E8;
+  --skb-shadow: rgba(75, 59, 199, 0.25);
+
   /* pixel scene */
   --sky-top: #4FA3E8; --sky-mid: #74BEF2; --sky-low: #A5DBF8;
   --grass: #6FBF4C; --grass-dark: #4E9C38; --dirt: #8A6B44;

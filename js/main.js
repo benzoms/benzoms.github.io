@@ -41,6 +41,50 @@
     });
   }
 
+  /* ---- theme switcher (system bar dropdown), persisted ---- */
+  var THEME_KEY = "bz-theme";
+  var THEMES = { terminal: "Terminal", editorial: "Editorial", blueprint: "Blueprint", pixel: "Pixel" };
+  var themeBtn = document.querySelector(".theme-switch__btn");
+  var themeMenu = document.querySelector(".theme-switch__menu");
+
+  function applyTheme(theme) {
+    if (theme === "dreamwave") theme = "pixel";
+    if (!THEMES[theme]) theme = "terminal";
+    document.documentElement.setAttribute("data-theme", theme);
+    if (themeBtn) themeBtn.textContent = "Theme: " + THEMES[theme];
+    if (themeMenu) {
+      themeMenu.querySelectorAll("[data-theme-opt]").forEach(function (opt) {
+        opt.setAttribute("aria-selected", opt.getAttribute("data-theme-opt") === theme ? "true" : "false");
+      });
+    }
+  }
+  var savedTheme = "terminal";
+  try { savedTheme = localStorage.getItem(THEME_KEY) || "terminal"; } catch (e) {}
+  applyTheme(savedTheme);
+
+  function closeThemeMenu() {
+    if (!themeMenu || themeMenu.hidden) return;
+    themeMenu.hidden = true;
+    themeBtn.setAttribute("aria-expanded", "false");
+  }
+  if (themeBtn && themeMenu) {
+    themeBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      themeMenu.hidden = !themeMenu.hidden;
+      themeBtn.setAttribute("aria-expanded", themeMenu.hidden ? "false" : "true");
+    });
+    themeMenu.addEventListener("click", function (e) {
+      var opt = e.target.closest("[data-theme-opt]");
+      if (!opt) return;
+      var theme = opt.getAttribute("data-theme-opt");
+      applyTheme(theme);
+      try { localStorage.setItem(THEME_KEY, theme); } catch (err) {}
+      closeThemeMenu();
+    });
+    document.addEventListener("click", closeThemeMenu);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeThemeMenu(); });
+  }
+
   /* ---- scroll reveal: windows "open" as they enter the viewport ---- */
   var revealEls = document.querySelectorAll(".reveal");
   if (reducedMotion || !("IntersectionObserver" in window)) {
