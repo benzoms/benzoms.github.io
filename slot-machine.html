@@ -385,6 +385,25 @@ const REWARDS = [
   { id: 'depot',  icon: '🧰', amount: '$50', name: 'Home Depot Gift Card',c1: '#ff9e3d', c2: '#b35708' },
 ];
 
+// Decoys appear on the reel but the spin can never land on them
+const DECOYS = [
+  { id: 'dinner', icon: '🧾', amount: 'OOPS', name: 'You Pay for Dinner',          c1: '#6b7280', c2: '#374151' },
+  { id: 'cat',    icon: '🧙', amount: 'MEOW', name: 'Turned Into a Cat by a Wizard', c1: '#8b5cf6', c2: '#4c1d95' },
+  { id: 'sock',   icon: '🧦', amount: 'YAY?', name: 'One Slightly Damp Sock',      c1: '#78716c', c2: '#44403c' },
+];
+
+// Prank-mode prizes (landable only in prank mode); dinner doubles as a decoy
+const CHORES = [
+  DECOYS[0], // You Pay for Dinner
+  { id: 'bensroom', icon: '🧹', amount: 'CHORE', name: "Clean Ben's Room",    c1: '#34d399', c2: '#065f46' },
+  { id: 'bonus',    icon: '🧽', amount: 'CHORE', name: 'Clean the Bonus Room', c1: '#f472b6', c2: '#9d2463' },
+];
+
+// Reel cycle alternates real rewards with decoys, plus the extra chore cards
+const ITEMS = [];
+REWARDS.forEach((rw, i) => { ITEMS.push(rw, DECOYS[i % DECOYS.length]); });
+ITEMS.push(CHORES[1], CHORES[2]);
+
 function shuffle(a) {
   const arr = a.slice();
   for (let i = arr.length - 1; i > 0; i--) {
@@ -393,7 +412,8 @@ function shuffle(a) {
   }
   return arr;
 }
-const prizeQueue = shuffle(REWARDS);
+let prankMode = false;
+let prizeQueue = shuffle(REWARDS);
 let spinsLeft = 3;
 let state = 'idle'; // idle | spinning | reveal | done
 
@@ -443,6 +463,10 @@ const audio = (() => {
       notes.forEach((f, i) => { blip(f, 0.32, 'triangle', 0.22, i * 0.09); blip(f * 2, 0.22, 'sine', 0.08, i * 0.09); });
       noise(0.5, 0.12, 0.1);
     },
+    womp() { // sad trombone-ish descent for prank prizes
+      const notes = [392, 370, 349, 262];
+      notes.forEach((f, i) => blip(f, i === 3 ? 0.7 : 0.3, 'sawtooth', 0.12, i * 0.28));
+    },
     toggleMute() { muted = !muted; return muted; },
   };
 })();
@@ -458,14 +482,14 @@ const strip = document.getElementById('strip');
 const streaks = document.getElementById('streaks');
 const pointers = document.querySelectorAll('.pointer');
 
-const REPEATS = 8; // reel strip = REWARDS repeated this many times
-const seq = [];    // card -> reward index
+const REPEATS = 5; // reel strip = ITEMS cycle repeated this many times
+const seq = [];    // card -> index into ITEMS
 const cardEls = [];
 
 function buildStrip() {
   for (let r = 0; r < REPEATS; r++) {
-    for (let i = 0; i < REWARDS.length; i++) {
-      const rw = REWARDS[i];
+    for (let i = 0; i < ITEMS.length; i++) {
+      const rw = ITEMS[i];
       const el = document.createElement('div');
       el.className = 'prize-card';
       el.style.setProperty('--c1', rw.c1);
@@ -534,10 +558,10 @@ function spinReel(rewardIndex, onDone) {
   const startOff = offset;
   // pick a target card instance of this reward a few loops ahead
   const curCard = cardAtCenter(startOff);
-  let target = curCard + 3 * REWARDS.length + 2; // minimum travel
-  if (!Number.isFinite(target)) target = 3 * REWARDS.length + 2;
-  for (let g = 0; g < REWARDS.length && ((target % REWARDS.length) + REWARDS.length) % REWARDS.length !== rewardIndex; g++) target++;
-  target += 3 * REWARDS.length; // extra loops for drama
+  let target = curCard + ITEMS.length + 2; // minimum travel
+  if (!Number.isFinite(target)) target = ITEMS.length + 2;
+  for (let g = 0; g < ITEMS.length && ((target % ITEMS.length) + ITEMS.length) % ITEMS.length !== rewardIndex; g++) target++;
+  target += 2 * ITEMS.length; // extra loops for drama
   const targetOff = (target + 0.5) * cardH - winH / 2;
   const overshoot = cardH * 0.42;
   const Dmain = targetOff + overshoot - startOff;
@@ -698,7 +722,7 @@ spinBtn.addEventListener('click', () => {
   flyToken();
 
   pendingReward = prizeQueue[2 - spinsLeft];
-  const rewardIndex = REWARDS.indexOf(pendingReward);
+  const rewardIndex = ITEMS.indexOf(pendingReward);
 
   setTimeout(() => {
     measure();
@@ -709,13 +733,15 @@ spinBtn.addEventListener('click', () => {
 function onSpinDone() {
   state = 'reveal';
   const rw = pendingReward;
+  const isReal = REWARDS.includes(rw);
   flash.classList.remove('go'); void flash.offsetWidth; flash.classList.add('go');
   marquee.classList.add('strobe');
-  audio.fanfare();
+  if (isReal) audio.fanfare(); else audio.womp();
   burstConfetti(reducedMotion ? 40 : 150, [rw.c1, rw.c2, '#ffcf4d', '#ffffff']);
 
   revealCard.style.setProperty('--c1', rw.c1);
   revealCard.style.setProperty('--c2', rw.c2);
+  revealCard.querySelector('.headline').textContent = isReal ? 'YOU WON' : 'YOU GOT';
   revealCard.querySelector('.icon').textContent = rw.icon;
   revealCard.querySelector('.amount').textContent = rw.amount;
   revealCard.querySelector('.name').textContent = rw.name;
@@ -744,11 +770,48 @@ reveal.addEventListener('click', () => {
     state = 'done';
     spinBtn.disabled = true;
     spinBtn.textContent = 'DONE';
-    spinHint.textContent = 'All prizes claimed! 🎉';
+    spinHint.textContent = prankMode ? 'Better get started… 🧹' : 'All prizes claimed! 🎉';
     marquee.classList.add('strobe');
     burstConfetti(reducedMotion ? 60 : 260, ['#ffcf4d', '#e8855b', '#4da3e0', '#ff9e3d', '#ffffff']);
-    audio.fanfare();
-    setTimeout(() => audio.fanfare(), 500);
+    if (prankMode) { audio.womp(); }
+    else { audio.fanfare(); setTimeout(() => audio.fanfare(), 500); }
+  }
+});
+
+/* ============ Secret prank mode: 5 quick taps on the marquee ============ */
+function resetGame() {
+  prizeQueue = prankMode ? CHORES.slice() : shuffle(REWARDS);
+  spinsLeft = 3;
+  state = 'idle';
+  pendingReward = null;
+  reveal.classList.remove('show');
+  marquee.classList.remove('strobe');
+  spinBtn.disabled = false;
+  spinBtn.textContent = 'SPIN';
+  spinHint.textContent = '3 tokens · 3 prizes';
+  shelfSlots.forEach((s, i) => {
+    s.className = 'shelf-slot';
+    s.removeAttribute('style');
+    s.textContent = `PRIZE ${i + 1}`;
+  });
+  // subtle tell for the operator: prank-mode tokens show a diamond
+  tray.querySelectorAll('.token').forEach(t => {
+    t.className = 'token';
+    t.textContent = prankMode ? '✦' : '★';
+  });
+}
+
+let secretTaps = 0, secretTimer = null;
+marquee.addEventListener('pointerdown', () => {
+  if (state === 'spinning' || state === 'reveal') return;
+  secretTaps++;
+  clearTimeout(secretTimer);
+  secretTimer = setTimeout(() => { secretTaps = 0; }, 1600);
+  if (secretTaps >= 5) {
+    secretTaps = 0;
+    prankMode = !prankMode;
+    resetGame();
+    audio.coin();
   }
 });
 
@@ -775,9 +838,8 @@ function idleFrame(now) {
 }
 
 layout();
-// start reel centered on the first card
-offset = 0.5 * cardH - winH / 2 + cardH * 0; // card 0 centered
-offset = (0 + 0.5) * cardH - winH / 2;
+// start reel centered on the damp sock decoy
+offset = (ITEMS.findIndex(it => it.id === 'sock') + 0.5) * cardH - winH / 2;
 // keep offset positive within loop
 offset = ((offset % totalLen) + totalLen) % totalLen;
 renderReel();
